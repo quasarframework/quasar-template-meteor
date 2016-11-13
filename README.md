@@ -1,6 +1,8 @@
 # app-template-meteor
 Quasar Starter Kit for Meteor
 
+**WORK IN PROGRESS**
+
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
 and then we added Quasar to that. So thanks to Akyrum for making Meteor work with Vue.
