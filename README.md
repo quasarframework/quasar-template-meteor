@@ -11,29 +11,40 @@ and then we added Quasar to that. So thanks to Akyrum for making Meteor work wit
 
 **clone the repository:**
 
+```
 git clone https://github.com/quasarframework/app-template-meteor.git
-
+```
 
 **Install the stuff from npm (we don't save the node-modules folder in github)**
 
-*meteor npm install --save fastclick moment velocity-animate*
+```
+meteor npm install --save fastclick moment velocity-animate
+```
 
-*meteor npm install --save vue vue-router quasar-framework*
+```
+meteor npm install --save vue vue-router quasar-framework
+```
 
-*meteor npm install --save babel-runtime meteor-node-stubs*
+```
+meteor npm install --save babel-runtime meteor-node-stubs
+```
 
 **run meteor**
 
-*meteor*
+```
+meteor
+```
 
 ———————
 
 
 You will get some error messages:
+```
 [ '- invalid expression: :class="{active: (!mouseModel && model  __v3526c1452685d1042a961c804897cdc640f6cca6cdd471b629fbc6de38756ab7>= index) || (mouseModel && mouseModel >= index)}"' ]
 [ '- invalid expression: :class="{incomplete: step  __v06909b10feb6b30b0edd6334bda8e34fa4c548289fce08e7d4a98c73f334ef12> stepper.currentStep}"',
   '- invalid expression: v-show="step  __v06909b10feb6b30b0edd6334bda8e34fa4c548289fce08e7d4a98c73f334ef12>= stepper.currentStep"',
   '- invalid expression: v-if="step  __v06909b10feb6b30b0edd6334bda8e34fa4c548289fce08e7d4a98c73f334ef12> 1"' ]
+```
 
 but these messages don’t prevent the app starting, and have been reported.
 
