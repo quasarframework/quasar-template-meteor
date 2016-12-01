@@ -1,57 +1,57 @@
 <template>
-    <quasar-layout>
+    <q-layout>
         <!-- Header -->
         <div slot="header" class="toolbar">
             <!-- opens left-side drawer using its ref -->
             <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
                 <i>menu</i>
             </button>
-            <quasar-toolbar-title :padding="1">
+            <q-toolbar-title :padding="1">
                 Title
-            </quasar-toolbar-title>
+            </q-toolbar-title>
             <!-- opens right-side drawer using its ref -->
             <button class="hide-on-drawer-visible" @click="$refs.rightDrawer.open()">
                 <i>menu</i>
             </button>
         </div>
         <!-- Navigation Tabs -->
-        <quasar-tabs slot="navigation">
-            <quasar-tab icon="mail" route="/" exact replace>Mails</quasar-tab>
-            <quasar-tab icon="alarm" route="/clockalarm" exact replace>Alarms</quasar-tab>
-            <quasar-tab icon="help" route="/help" exact replace>Help</quasar-tab>
-        </quasar-tabs>
+        <q-tabs slot="navigation">
+            <q-tab icon="mail" route="/" exact replace>Mails</q-tab>
+            <q-tab icon="alarm" route="/clockalarm" exact replace>Alarms</q-tab>
+            <q-tab icon="help" route="/help" exact replace>Help</q-tab>
+        </q-tabs>
         <!-- Left-side Drawer -->
-        <quasar-drawer ref="leftDrawer">
+        <q-drawer ref="leftDrawer">
             <div class="toolbar">
-                <quasar-toolbar-title>
+                <q-toolbar-title>
                     Drawer Title
-                </quasar-toolbar-title>
+                </q-toolbar-title>
             </div>
             <div class="list no-border platform-delimiter">
-                <quasar-drawer-link icon="mail" to="/" exact>
+                <q-drawer-link icon="mail" to="/" exact>
                     Mails
-                </quasar-drawer-link>
-                <quasar-drawer-link icon="alarm" to="/clockalarm" exact>
+                </q-drawer-link>
+                <q-drawer-link icon="alarm" to="/clockalarm" exact>
                     Alarm
-                </quasar-drawer-link>
-                <quasar-drawer-link icon="help" to="/help" exact>
+                </q-drawer-link>
+                <q-drawer-link icon="help" to="/help" exact>
                     Help
-                </quasar-drawer-link>
+                </q-drawer-link>
             </div>
-        </quasar-drawer>
+        </q-drawer>
         <!-- IF USING subRoutes only: -->
         <router-view class="layout-view"></router-view>
         <!-- OR ELSE, IF NOT USING subRoutes:
         <div class="layout-view"></div>-->
         <!-- Right-side Drawer -->
-        <quasar-drawer ref="rightDrawer" right-side>
+        <q-drawer ref="rightDrawer" right-side>
             right drawer
-        </quasar-drawer>
+        </q-drawer>
         <!-- Footer -->
         <div slot="footer" class="toolbar">
             <span>footer is here</span>
         </div>
-    </quasar-layout>
+    </q-layout>
 </template>
 
 <script>

@@ -1,11 +1,11 @@
 
 import {Meteor} from 'meteor/meteor';
 import Vue from 'vue';
+import Quasar from 'quasar-framework';
 import router from '/imports/routes';
 
 // App layout
 import AppLayout from '/imports/ui/AppLayout.vue';
-import Quasar from 'quasar-framework';
 
 //App start
 Meteor.startup(() => {

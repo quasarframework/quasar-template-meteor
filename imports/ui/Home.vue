@@ -2,7 +2,7 @@
         <div style="text-align: center;">
             <H5>{{ letsCountText }}</H5>
             <h1>{{ count }}</h1>
-            <div><quasar-progress :percentage="progress" class="positive"></quasar-progress></div>
+            <div><q-progress :percentage="progress" class="positive"></q-progress></div>
             <h2>{{ finished }}</h2>
         </div>
 </template>

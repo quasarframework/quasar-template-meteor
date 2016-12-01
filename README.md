@@ -3,6 +3,8 @@ Quasar Starter Kit for Meteor
 
 **WORK IN PROGRESS**
 
+(Updated 1st December 2016).
+
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
 and then we added Quasar to that. So thanks to Akyrum for making Meteor work with Vue.
@@ -55,16 +57,18 @@ Point your desktop browser to that address.
 
 ———————
 
-N.B. This is work in progress. (Updated 15th November 2016).
+N.B. This is work in progress. 
 We’re working to get Quasar working with Meteor mobile apps as well.
 
 **Problems:**
 
 1) White screen of death appears on mobile when starting the compiled Meteor/Cordova app. (document.body is null on startup).
-*There is a fix for this, which should be available soon.*
+FIXED
 
 2) On desktop, if you try to use the mobile simulator in Chrome dev tools, the app is wider than the viewport. Sometimes fiddling with code to produce an update solves this problem, but it seems that some kind of screen refresh needs to be forced here.  
 
 3) In Chrome’s mobile simulator (or when the left and right drawers are hidden) the links in the drawer on the left don’t work properly. The called page flashes for a millisecond and then disappears.
-*We've worked out why this is happening, and hope it can be fixed soon.*
+FIXED
 
+4) White screen still showing on startup:
+TypeError: FastClick.attach is not a function. (In ‘FastClick.attach(document.body)’, ‘FastClick.attach’ is undefined)
