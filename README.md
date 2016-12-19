@@ -3,13 +3,13 @@ Quasar Starter Kit for Meteor
 
 **WORK IN PROGRESS**
 
-(Updated 1st December 2016).
+(Updated 19th December 2016).
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
 and then we added Quasar to that. So thanks to Akyrum for making Meteor work with Vue.
 
-###Installation (only desktop works at the moment)
+###Installation 
 
 **clone the repository:**
 
@@ -17,19 +17,12 @@ and then we added Quasar to that. So thanks to Akyrum for making Meteor work wit
 git clone https://github.com/quasarframework/app-template-meteor.git
 ```
 
-**Install the stuff from npm (we don't save the node-modules folder in github)**
+**Install the stuff from npm**
 
 ```
-meteor npm install --save fastclick moment velocity-animate
+meteor npm install
 ```
 
-```
-meteor npm install --save vue vue-router quasar-framework
-```
-
-```
-meteor npm install --save babel-runtime meteor-node-stubs
-```
 
 **run meteor**
 
@@ -40,15 +33,18 @@ meteor
 ———————
 
 
-You will get some error messages:
+You will get some info messages:
 ```
-[ '- invalid expression: :class="{active: (!mouseModel && model  __v3526c1452685d1042a961c804897cdc640f6cca6cdd471b629fbc6de38756ab7>= index) || (mouseModel && mouseModel >= index)}"' ]
-[ '- invalid expression: :class="{incomplete: step  __v06909b10feb6b30b0edd6334bda8e34fa4c548289fce08e7d4a98c73f334ef12> stepper.currentStep}"',
-  '- invalid expression: v-show="step  __v06909b10feb6b30b0edd6334bda8e34fa4c548289fce08e7d4a98c73f334ef12>= stepper.currentStep"',
-  '- invalid expression: v-if="step  __v06909b10feb6b30b0edd6334bda8e34fa4c548289fce08e7d4a98c73f334ef12> 1"' ]
+[ '- invalid expression: v-if="entries  data-v-613f96f4> 0"',
+  '- invalid expression: v-if="pagination.rowsPerPage  data-v-613f96f4> 0"' ]
+[ '- invalid expression: v-show="rowsSelected  data-v-52670f90> 1"' ]
+[ '- invalid expression: :class="{active: (!mouseModel && model  data-v-36ea688f>= index) || (mouseModel && mouseModel >= index)}"' ]
+[ '- invalid expression: :class="{incomplete: step  data-v-683ad8fa> stepper.currentStep}"',
+  '- invalid expression: v-show="step  data-v-683ad8fa>= stepper.currentStep"',
+  '- invalid expression: v-if="step  data-v-683ad8fa> 1"' ]
 ```
 
-but these messages don’t prevent the app starting, and have been reported.
+but these messages don’t prevent the app starting, and are being looked at.
 
 Then it should say:
 App running at: http://localhost:3000/
@@ -57,18 +53,56 @@ Point your desktop browser to that address.
 
 ———————
 
-N.B. This is work in progress. 
-We’re working to get Quasar working with Meteor mobile apps as well.
+This app now also works on mobile as well (apart from a launch script - see solution below in 'Problems').
+Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IOS and Android.
+
+Android works well.
+
+IOS has a couple of problems with the UI due to Safari, which are being worked around as I write,
+and will be in version 11.0 of Quasar Framework.
 
 **Problems:**
 
-1) White screen of death appears on mobile when starting the compiled Meteor/Cordova app. (document.body is null on startup).
-FIXED
+There's a problem with a mobile launch script, which has been solved, and should be in the distribution soon.
 
-2) On desktop, if you try to use the mobile simulator in Chrome dev tools, the app is wider than the viewport. Sometimes fiddling with code to produce an update solves this problem, but it seems that some kind of screen refresh needs to be forced here.  
+However you can correct the script yourself, if you are impatient to see results.
 
-3) In Chrome’s mobile simulator (or when the left and right drawers are hidden) the links in the drawer on the left don’t work properly. The called page flashes for a millisecond and then disappears.
-FIXED
+1) Copy node_modules/quasar-framework/dist/quasar.common.js somewhere in case you want to put it back.
+2) open the script and look for the phrase **install$2**
 
-4) White screen still showing on startup:
-TypeError: FastClick.attach is not a function. (In ‘FastClick.attach(document.body)’, ‘FastClick.attach’ is undefined)
+change this:
+
+```
+function install$2(_Vue) {
+  var node = document.createElement('div');
+  document.body.appendChild(node);
+  toast = new _Vue(Toast$1).$mount(node);
+}
+```
+to this:
+```
+function install$2(_Vue) {
+   Utils.dom.ready(function () {
+      var node = document.createElement('div');
+      document.body.appendChild(node);
+      toast = new _Vue(Toast$1).$mount(node);
+  })
+}
+```
+3) Search for the phrase **FastClick.attach**
+
+change this:
+```
+if (Platform.has.touch) {
+  FastClick.attach(document.body);
+} 
+```
+to this:
+```
+if (Platform.has.touch) {
+  Utils.dom.ready(function () {
+      var attachFastClick = FastClick;
+      attachFastClick(document.body);
+  })    
+}
+```

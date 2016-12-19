@@ -1,2 +1,5 @@
 node_modules/
 .idea/
+startMeteor.sh
+startMeteorAndroid.sh
+startMeteorIOS.sh

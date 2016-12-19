@@ -16,9 +16,9 @@
         </div>
         <!-- Navigation Tabs -->
         <q-tabs slot="navigation">
-            <q-tab icon="mail" route="/" exact replace>Mails</q-tab>
-            <q-tab icon="alarm" route="/clockalarm" exact replace>Alarms</q-tab>
-            <q-tab icon="help" route="/help" exact replace>Help</q-tab>
+            <q-tab icon="mail" route="/" exact>Mails</q-tab>
+            <q-tab icon="alarm" route="/clockalarm" exact>Alarms</q-tab>
+            <q-tab icon="help" route="/help" exact>Help</q-tab>
         </q-tabs>
         <!-- Left-side Drawer -->
         <q-drawer ref="leftDrawer">
@@ -55,7 +55,15 @@
 </template>
 
 <script>
-    import 'quasar-framework/dist/quasar.ios.css';
-    import 'quasar-framework/dist/quasar.mat.css';
-    //alert('wot'); // this works from http on mobile
+    if(cordova.platformId == 'android'){
+        import 'quasar-framework/dist/quasar.mat.css';
+    }
+    else if(cordova.platformId == 'ios'){
+        import 'quasar-framework/dist/quasar.ios.css';
+    }
+    else{
+        //default
+        import 'quasar-framework/dist/quasar.mat.css';
+    }
+
 </script>

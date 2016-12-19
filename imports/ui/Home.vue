@@ -9,7 +9,6 @@
 
 <script>
     import {Session} from 'meteor/session';
-
     const MAX_COUNT = 3;
     let myInterval;
     export default {
