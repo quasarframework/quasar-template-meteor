@@ -55,10 +55,10 @@
 </template>
 
 <script>
-    if(cordova.platformId == 'android'){
+    if(cordova && cordova.platformId == 'android'){
         import 'quasar-framework/dist/quasar.mat.css';
     }
-    else if(cordova.platformId == 'ios'){
+    else if(cordova && cordova.platformId == 'ios'){
         import 'quasar-framework/dist/quasar.ios.css';
     }
     else{
