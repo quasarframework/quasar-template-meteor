@@ -55,13 +55,14 @@
 </template>
 
 <script>
-    if(cordova && cordova.platformId == 'android'){
-        import 'quasar-framework/dist/quasar.mat.css';
-    }
-    else if(cordova && cordova.platformId == 'ios'){
-        import 'quasar-framework/dist/quasar.ios.css';
-    }
-    else{
+    if(Meteor.isCordova){
+        if(cordova.platformId == 'android'){
+            import 'quasar-framework/dist/quasar.mat.css';
+        }
+        else if(cordova.platformId == 'ios'){
+            import 'quasar-framework/dist/quasar.ios.css';
+        }
+    }else{
         //default
         import 'quasar-framework/dist/quasar.mat.css';
     }
