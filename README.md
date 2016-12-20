@@ -63,7 +63,7 @@ and will be in version 11.0 of Quasar Framework.
 
 **Problems:**
 
-There's a problem with a mobile launch script, which has been solved, and should be in the distribution soon.
+There's a problem with one of the launch scripts when launching on mobile, which has been solved, and should be in the distribution soon.
 
 However you can correct the script yourself, if you are impatient to see results.
 
