@@ -59,5 +59,7 @@ Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IO
 
 **Problems:**
 
-Small problem on IOS, where the right-hand drawer won't always open properly.
+1) Small problem on IOS, where the right-hand drawer won't always open properly. This should be put right in 0.12.1
+2) I've had to copy the Material Design icons and the Roboto font to the /public folder.
+There is presumably a better way of doing this.
 
