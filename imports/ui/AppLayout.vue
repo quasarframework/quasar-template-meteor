@@ -57,14 +57,14 @@
 <script>
     if(Meteor.isCordova){
         if(cordova.platformId == 'android'){
-            import 'quasar-framework/dist/quasar.mat.css';
+            require('quasar-framework/dist/quasar.mat.css');
         }
         else if(cordova.platformId == 'ios'){
-            import 'quasar-framework/dist/quasar.ios.css';
+            require('quasar-framework/dist/quasar.ios.css');
         }
     }else{
         //default
-        import 'quasar-framework/dist/quasar.mat.css';
+        require('quasar-framework/dist/quasar.mat.css');
     }
 
 </script>

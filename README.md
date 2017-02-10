@@ -1,9 +1,7 @@
 # app-template-meteor
 Quasar Starter Kit for Meteor
 
-**WORK IN PROGRESS**
-
-(Updated 11th January 2017).
+(Updated 10th February 2017).
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
@@ -53,13 +51,15 @@ Point your desktop browser to that address.
 
 ———————
 
-This app also works well on mobile (both Android and IOS).
+This app is actually made for mobile (both Android and IOS), so it doesn't look up to much on desktop.
 
 Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IOS and Android.
 
+You can see how it would look by clicking on the mobile phone icon in Chrome Dev Tools.
+However I find that I have to force a hot code update, by changing something in the code, before it shows properly.
+
 **Problems:**
 
-1) Small problem on IOS, where the right-hand drawer won't always open properly. This should be put right in 0.12.1
-2) I've had to copy the Material Design icons and the Roboto font to the /public folder.
-There is presumably a better way of doing this.
+1) I've had to copy the Material Design icons and the Roboto font to the /public folder.
+There is maybe a better way of doing this.
 
