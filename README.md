@@ -3,9 +3,8 @@ Quasar Starter Kit for Meteor
 
 (Updated 17th March 2017).
 
-N.B. There is currently a problem Meteor/UglifyJS, which is affecting Quasar. 
-I believe this will be resolved by **https://github.com/meteor/meteor/issues/8378**, 
-which has already been merged and will be in the next Meteor update.
+N.B. There is currently a build problem which has been reported here 
+**https://github.com/meteor/meteor/issues/8498**, 
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
