@@ -55,16 +55,19 @@
 </template>
 
 <script>
-    if(Meteor.isCordova){
-        if(cordova.platformId == 'android'){
-            require('quasar-framework/dist/quasar.mat.css');
+    //we have to check we are on the client otherwise server side code complains
+    if(Meteor.isClient) {
+        require('/imports/quasar/quasar.es6');
+        if(Meteor.isCordova){
+            if(cordova.platformId == 'android'){
+                require('/imports/quasar/quasar.mat.css');
+            }
+            else if(cordova.platformId == 'ios'){
+                require('/imports/quasar/quasar.ios.css');
+            }
+        }else{
+            //default
+            require('/imports/quasar/quasar.mat.css');
         }
-        else if(cordova.platformId == 'ios'){
-            require('quasar-framework/dist/quasar.ios.css');
-        }
-    }else{
-        //default
-        require('quasar-framework/dist/quasar.mat.css');
     }
-
 </script>

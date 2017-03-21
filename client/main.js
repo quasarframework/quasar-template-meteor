@@ -1,8 +1,7 @@
 
 import {Meteor} from 'meteor/meteor';
 import Vue from 'vue';
-import Quasar from 'quasar-framework';
-import router from '/imports/routes';
+import routerFactory from '/imports/routes';
 
 // App layout
 import AppLayout from '/imports/ui/AppLayout.vue';
@@ -10,11 +9,10 @@ import AppLayout from '/imports/ui/AppLayout.vue';
 
 //App start
 Meteor.startup(() => {
-    Quasar.start(() => {
+    const router = routerFactory.create()
         new Vue({
-            router: router.start(),
+            router: router,
             render: h => h(AppLayout),
         }).$mount('app');
-    });
 });
 

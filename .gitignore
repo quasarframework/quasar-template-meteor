@@ -3,3 +3,4 @@ node_modules/
 startMeteor.sh
 startMeteorAndroid.sh
 startMeteorIOS.sh
+buildAll.sh
