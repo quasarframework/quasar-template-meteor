@@ -55,10 +55,14 @@
 </template>
 
 <script>
+    //this is gated until we are able to install from npm
+    //import Quasar from 'quasar-framework';
+
+
     //we have to check we are on the client otherwise server side code complains
     if(Meteor.isClient) {
         require('/imports/quasar/quasar.es6');
-        if(Meteor.isCordova){
+              if(Meteor.isCordova){
             if(cordova.platformId == 'android'){
                 require('/imports/quasar/quasar.mat.css');
             }
