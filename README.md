@@ -3,13 +3,16 @@
 # app-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 21st March 2017).
+(Updated 28th June 2017).
+#### Now installing properly from npm
 
-Current quasar version 0.13.6
+Quasar 0.13.9
+
+Meteor 1.5
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
-and then we added Quasar to that. So thanks to Akyrum for making Meteor work with Vue.
+and then we added Quasar to that. So thankyou to Akyrum for making Meteor work with Vue. - Amazing work.
 
 ###Installation 
 
@@ -51,11 +54,4 @@ Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IO
 
 1) I've copied the Material Design icons and the Roboto font to the /public folder.
 There may be a better way of doing this.
-
-**How does it work?**
-
-You cannot 'npm install' the quasar-framework in a meteor app, because quasar needs webpack,
-and meteor, for simplicity, does not use webpack.
-
-So we have created a quasar folder in /imports, and there we have copied 'quasar.es6.js' from the /dist folder in the npm installation, along with some css files.
 
