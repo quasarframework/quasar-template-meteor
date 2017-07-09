@@ -3,7 +3,7 @@
 # app-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 28th June 2017).
+(Updated 10th July 2017).
 #### Now installing properly from npm
 
 Quasar 0.13.9
