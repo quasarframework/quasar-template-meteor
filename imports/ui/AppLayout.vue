@@ -16,7 +16,7 @@
         </div>
         <!-- Navigation Tabs -->
         <q-tabs slot="navigation">
-            <q-tab icon="mail" route="/" exact>PubSub</q-tab>
+            <q-tab icon="save" route="/" exact>PubSub</q-tab>
             <q-tab icon="alarm" route="/session" exact>Session</q-tab>
             <q-tab icon="help" route="/help" exact>Help</q-tab>
         </q-tabs>
@@ -28,7 +28,7 @@
                 </q-toolbar-title>
             </div>
             <div class="list no-border platform-delimiter">
-                <q-drawer-link icon="mail" to="/" exact>
+                <q-drawer-link icon="save" to="/" exact>
                     PubSub
                 </q-drawer-link>
                 <q-drawer-link icon="alarm" to="/session" exact>
