@@ -5,9 +5,9 @@ export default [
     component: '/imports/ui/Home.vue',
   },
   {
-    path: '/clockalarm',
-    name: 'clockalarm',
-    component: '/imports/ui/ClockAlarm.vue',
+    path: '/session',
+    name: 'session',
+    component: '/imports/ui/Session.vue',
    },
   {
     path: '/help',

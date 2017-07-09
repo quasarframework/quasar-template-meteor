@@ -16,8 +16,8 @@
         </div>
         <!-- Navigation Tabs -->
         <q-tabs slot="navigation">
-            <q-tab icon="mail" route="/" exact>Mails</q-tab>
-            <q-tab icon="alarm" route="/clockalarm" exact>Alarms</q-tab>
+            <q-tab icon="mail" route="/" exact>PubSub</q-tab>
+            <q-tab icon="alarm" route="/session" exact>Session</q-tab>
             <q-tab icon="help" route="/help" exact>Help</q-tab>
         </q-tabs>
         <!-- Left-side Drawer -->
@@ -29,10 +29,10 @@
             </div>
             <div class="list no-border platform-delimiter">
                 <q-drawer-link icon="mail" to="/" exact>
-                    Mails
+                    PubSub
                 </q-drawer-link>
-                <q-drawer-link icon="alarm" to="/clockalarm" exact>
-                    Alarm
+                <q-drawer-link icon="alarm" to="/session" exact>
+                    Session
                 </q-drawer-link>
                 <q-drawer-link icon="help" to="/help" exact>
                     Help

@@ -1,46 +1,70 @@
 <template>
         <div style="text-align: center;">
-            <H5>{{ letsCountText }}</H5>
-            <h1>{{ count }}</h1>
-            <div><q-progress :percentage="progress" class="positive"></q-progress></div>
-            <h2>{{ finished }}</h2>
+            <div>
+                <!-- Regular shaped -->
+                <button class="primary" @click="clickMethod()">
+                    Add a record
+                </button>
+            </div>
+            <p class="caption">Striped star list</p>
+            <div class="list striped">
+                <div class="item" v-for="item in starRecords">
+                    <div class="item-content">
+                        {{ item.name }}
+                    </div>
+                </div>
+            </div>
         </div>
 </template>
 
 <script>
-    import {Session} from 'meteor/session';
-    const MAX_COUNT = 3;
-    let myInterval;
+    import { Meteor } from 'meteor/meteor';
+    import {Stars} from '../lib/collections';
+
     export default {
+        data() {
+            return {
+                starNames: ['Dog Star', 'Sirius', 'Pole Star', 'Sun', 'Arthur'],
+                counter: -1
+            }
+        },
         meteor: {
-            data: {
-                letsCountText() {
-                    return 'Let\'s count to ' + MAX_COUNT;
+            starRecords: {
+                params() {
+                    return null;
                 },
-                count() {
-                    return Session.get('count');
-                },
-                finished() {
-                    return Session.get('count') === MAX_COUNT ? 'Finished!!' : '';
-                },
-                progress() {
-                    return Session.get('count') * (100 / MAX_COUNT);
+                update () {
+                    var starsFound = Stars.find();
+                    if(starsFound.count() > this.starNames.length){
+                        starsFound.forEach(function(doc, index){
+                            Stars.remove({_id: doc._id});
+                        });
+                        this.counter = -1;
+                        alert('starting again ..');
+                    }
+                    return starsFound;
                 }
             }
         },
-        created() {
-            Session.set('count', 0);
-            let i = 1;
-            myInterval =  Meteor.setInterval(function () {
-                Session.set('count', i);
-                i++;
-                if(i > MAX_COUNT){
-                    clearInterval(myInterval);
+        methods: {
+            clickMethod() {
+                if(this.counter < this.starNames.length - 1) {
+                    Stars.insert({name: this.starNames[this.getCounter()]});
+                }else{
+                    alert('There are only five stars')
                 }
-            }, 500);
+            },
+            getCounter () {
+                if(this.counter >= this.starNames.length - 1){
+                    console.log('starNames', starNames);
+                     return -1;
+                }
+                this.counter++;
+                return this.counter;
+            }
         },
-        destroyed() {
-            clearInterval(myInterval);
+        created() {
+            this.$subscribe('stars');
         }
     }
 
