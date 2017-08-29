@@ -1,18 +1,18 @@
 ![Quasar Framework logo](https://cdn.rawgit.com/quasarframework/quasar-art/863c14bd/dist/svg/quasar-logo-full-inline.svg)
 
-# app-template-meteor
+# quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 10th July 2017).
+(Updated 29th August 2017).
 #### Now installing properly from npm
 
 Quasar 0.13.9
 
-Meteor 1.5
+Meteor 1.5.1
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
-and then we added Quasar to that. So thankyou to Akyrum for making Meteor work with Vue. - Amazing work.
+and then we added Quasar to that. So thankyou to Akryum for making Meteor work with Vue. - Amazing work.
 
 ###Installation 
 
@@ -22,6 +22,11 @@ and then we added Quasar to that. So thankyou to Akyrum for making Meteor work w
 git clone https://github.com/quasarframework/quasar-template-meteor.git
 ```
 
+**cd into the 'template' folder:**
+```
+cd template
+```
+
 **Install from npm**
 
 ```
@@ -29,7 +34,7 @@ meteor npm install --save
 ```
 
 
-**run meteor**
+**run meteor (still in the template folder)**
 
 ```
 meteor
@@ -44,11 +49,11 @@ Point your desktop browser to that address.
 
 ———————
 
-This app is actually made for mobile (both Android and IOS), so it doesn't look up to much on desktop.
-You can see how it would look by clicking on the mobile phone icon in Chrome Dev Tools. 
-Then change something in the code to make it do a hot-code push, so that the screen updates.
-
+Quasar is also perfect for mobile apps, and this template will work there.
 Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IOS and Android.
+
+Note: The 'template' folder is necessary for the *quasar cli* command to function. 
+All meteor commands should be run from inside the 'template' folder.
 
 **Problems:**
 
