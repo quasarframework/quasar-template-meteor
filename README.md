@@ -19,7 +19,7 @@ and then we added Quasar to that. So thankyou to Akyrum for making Meteor work w
 **clone this repository:**
 
 ```
-git clone https://github.com/quasarframework/app-template-meteor.git
+git clone https://github.com/quasarframework/quasar-template-meteor.git
 ```
 
 **Install from npm**
