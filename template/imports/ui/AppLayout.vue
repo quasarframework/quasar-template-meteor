@@ -1,52 +1,48 @@
 <template>
-    <q-layout>
+    <q-layout ref="layout" view="hHr LpR lFf" :right-breakpoint="1100">
         <!-- Header -->
-        <div slot="header" class="toolbar">
-            <!-- opens left-side drawer using its ref -->
-            <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
-                <i>menu</i>
-            </button>
-            <q-toolbar-title :padding="1">
-                Title
+        <q-toolbar slot="header">
+            <q-btn flat @click="$refs.layout.toggleLeft()">
+                <q-icon name="menu" />
+            </q-btn>
+            <q-toolbar-title>
+                Layout Header
+                <span slot="subtitle">Optional subtitle</span>
             </q-toolbar-title>
-            <!-- opens right-side drawer using its ref -->
-            <button class="hide-on-drawer-visible" @click="$refs.rightDrawer.open()">
-                <i>menu</i>
-            </button>
-        </div>
+            <q-btn flat @click="$refs.layout.toggleRight()">
+                <q-icon name="menu" />
+            </q-btn>
+        </q-toolbar>
         <!-- Navigation Tabs -->
         <q-tabs slot="navigation">
-            <q-tab icon="save" route="/" exact>PubSub</q-tab>
-            <q-tab icon="alarm" route="/session" exact>Session</q-tab>
-            <q-tab icon="help" route="/help" exact>Help</q-tab>
+            <q-route-tab slot="title" icon="save" to="/" replace label="PubSub" />
+            <q-route-tab slot="title" icon="alarm" to="/session" replace label="Session" />
+            <q-route-tab slot="title" icon="help" to="/help" replace label="Help" />
         </q-tabs>
         <!-- Left-side Drawer -->
-        <q-drawer ref="leftDrawer">
-            <div class="toolbar">
-                <q-toolbar-title>
-                    Drawer Title
-                </q-toolbar-title>
-            </div>
-            <div class="list no-border platform-delimiter">
-                <q-drawer-link icon="save" to="/" exact>
-                    PubSub
-                </q-drawer-link>
-                <q-drawer-link icon="alarm" to="/session" exact>
-                    Session
-                </q-drawer-link>
-                <q-drawer-link icon="help" to="/help" exact>
-                    Help
-                </q-drawer-link>
-            </div>
-        </q-drawer>
-        <!-- IF USING subRoutes only: -->
-        <router-view class="layout-view"></router-view>
+        <div slot="left">
+            Left Side
+            <!--
+            <q-list no-border link inset-separator>
+                <q-list-header>Essential Links</q-list-header>
+                <q-side-link item to="/docs">
+                    <q-item-side icon="school" />
+                    <q-item-main label="Docs" sublabel="quasar-framework.org" />
+                </q-side-link>
+                <q-side-link item to="/forum">
+                    <q-item-side icon="record_voice_over" />
+                    <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
+                </q-side-link>
+             </q-list>-->
+        </div>
+        <!-- IF USING subRoutes only:-->
+        <router-view/>
         <!-- OR ELSE, IF NOT USING subRoutes:
         <div class="layout-view"></div>-->
-        <!-- Right-side Drawer -->
-        <q-drawer ref="rightDrawer" right-side>
-            right drawer
-        </q-drawer>
+        <!-- Right Side Panel -->
+        <div slot="right">
+            Right Side of Layout
+        </div>
         <!-- Footer -->
         <div slot="footer" class="toolbar">
             <span>footer is here</span>
@@ -55,20 +51,45 @@
 </template>
 
 <script>
+
+    //See main.js for the global import of 'Quasar' and vue.use() method.
+    //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
+
+    //we import components individually, it reduces code
+    import {
+        QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
+        QSideLink, QItemMain, QItemSide, QList, QListHeader
+    } from '/node_modules/quasar-framework/dist/quasar.common.js';
+
+    import '/public/material-icons.css';
+
     //we have to check we are on the client otherwise server side code complains
-    if(Meteor.isClient) {
-        //this is gated until we are able to install from npm
-    import Quasar from 'quasar-framework';
-        if(Meteor.isCordova){
-            if(cordova.platformId == 'android'){
-                require('/imports/quasar/quasar.mat.css');
-            }
-            else if(cordova.platformId == 'ios'){
-                require('/imports/quasar/quasar.ios.css');
-            }
-        }else{
-            //default
-            require('/imports/quasar/quasar.mat.css');
+    if(Meteor.isCordova){
+        if(cordova.platformId == 'android'){
+            //dynamic import
+            import('/node_modules/quasar-framework/dist/quasar.mat.css');
+        }
+        else if(cordova.platformId == 'ios'){
+            import('/node_modules/quasar-framework/dist/quasar.ios.css');
+        }
+    }else{
+        //default
+        import('/node_modules/quasar-framework/dist/quasar.mat.css');
+    }
+
+
+    export default {
+        components: {
+            QLayout,
+            QToolbar,
+            QToolbarTitle,
+            QTabs,
+            QTab,
+            QRouteTab,
+            QBtn,
+            QIcon,
+            QSideLink, QItemMain, QItemSide,
+            QList, QListHeader
         }
     }
 </script>

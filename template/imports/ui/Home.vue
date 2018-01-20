@@ -1,25 +1,25 @@
 <template>
-        <div style="text-align: center;">
-            <div>
-                <!-- Regular shaped -->
-                <button class="primary" @click="clickMethod()">
-                    Add a record
-                </button>
-            </div>
-            <p class="caption">Striped star list</p>
-            <div class="list striped">
-                <div class="item" v-for="item in starRecords">
-                    <div class="item-content">
-                        {{ item.name }}
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+        <q-btn color="primary" @click="clickMethod()">
+            Add a record
+        </q-btn>
+        <q-list striped>
+            <q-list-header>Striped star list</q-list-header>
+            <q-item v-for="item in starRecords" :key="item._id">
+                <q-item-main>
+                    {{ item.name }}
+                </q-item-main>
+            </q-item>
+        </q-list>
+    </div>
 </template>
 
 <script>
     import { Meteor } from 'meteor/meteor';
     import {Stars} from '../lib/collections';
+
+    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.common.js';
+
 
     export default {
         data() {
@@ -27,6 +27,13 @@
                 starNames: ['Dog Star', 'Sirius', 'Pole Star', 'Sun', 'Arthur'],
                 counter: -1
             }
+        },
+        components: {
+            QList,
+            QListHeader,
+            QBtn,
+            QItem,
+            QItemMain
         },
         meteor: {
             starRecords: {
