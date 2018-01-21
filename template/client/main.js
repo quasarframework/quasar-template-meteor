@@ -18,6 +18,7 @@ const routerFactory = new RouterFactory({
 // App layout
 import AppLayout from '/imports/ui/AppLayout.vue';
 
+
 //import Quasar globally
 import Quasar from '/node_modules/quasar-framework/dist/quasar.common.js';
 Vue.use(Quasar, {});

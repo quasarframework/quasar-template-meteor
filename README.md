@@ -3,9 +3,9 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 16th December 2017).
+(Updated 22nd January 2018).
 
-Quasar 0.13.9
+Quasar 0.14.7
 
 Meteor 1.6.0.1
 
@@ -13,8 +13,9 @@ This is a resource which will show how to install Quasar inside the Meteor frame
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
 and then we added Quasar to that. So thankyou to Akryum for making Meteor work with Vue. - Amazing work.
 
-##### N.B. Quasar 0.14 does not install from npm.
-This should be solved in **Quasar 0.15** - coming out soon. - A UMD version of quasar is on the 15.0 road map.
+#### N.B. Quasar 0.14 now installs from npm, BUT there is an serious open issue.
+#### Please wait and Watch This Space.
+
 
 #### Installation
 
@@ -33,6 +34,11 @@ cd template
 
 ```
 meteor npm install
+```
+**Then here we transpile an es6 .js file to commonjs which meteor needs**
+
+```
+npm run transpile
 ```
 
 
@@ -59,10 +65,10 @@ If you open Chrome dev tools and click on the mobile phone icon you should see t
 
 #### Note:
 The 'template' folder is necessary for the *quasar cli* command to function.
-All meteor commands should be run from inside the 'template' folder.
+All meteor commands however should be run from inside the 'template' folder.
 
 **Problems:**
 
-1) I've copied the Material Design icons and the Roboto font to the /public folder.
+1) I've had to create symlinks from /node_modules/quasar-extras to the /public folder for the Material Design icons.
 There may be a better way of doing this.
 

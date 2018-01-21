@@ -21,19 +21,21 @@
         </q-tabs>
         <!-- Left-side Drawer -->
         <div slot="left">
-            Left Side
-            <!--
             <q-list no-border link inset-separator>
                 <q-list-header>Essential Links</q-list-header>
-                <q-side-link item to="/docs">
-                    <q-item-side icon="school" />
-                    <q-item-main label="Docs" sublabel="quasar-framework.org" />
+                <q-side-link item to="/">
+                    <q-item-side icon="save" />
+                    <q-item-main label="PubSub" />
                 </q-side-link>
-                <q-side-link item to="/forum">
-                    <q-item-side icon="record_voice_over" />
-                    <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
+                <q-side-link item to="/session">
+                    <q-item-side icon="alarm" />
+                    <q-item-main label="Session" />
                 </q-side-link>
-             </q-list>-->
+                <q-side-link item to="/help">
+                    <q-item-side icon="help" />
+                    <q-item-main label="Help" />
+                </q-side-link>
+             </q-list>
         </div>
         <!-- IF USING subRoutes only:-->
         <router-view/>
@@ -44,7 +46,7 @@
             Right Side of Layout
         </div>
         <!-- Footer -->
-        <div slot="footer" class="toolbar">
+        <div slot="footer">
             <span>footer is here</span>
         </div>
     </q-layout>
@@ -55,16 +57,14 @@
     //See main.js for the global import of 'Quasar' and vue.use() method.
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
 
-    //we import components individually, it reduces code
-    import {
-        QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
-        QSideLink, QItemMain, QItemSide, QList, QListHeader
-    } from '/node_modules/quasar-framework/dist/quasar.common.js';
+    //we've had to symlink all the material-icons material from /node-modules/quasar-extras/material-icons
+    //to /public because for some reason material-icons.css cannot find './MaterialIcons-Regular.woff'
+    // which is in the same folder as itself
+    import '/public/material-icons';
 
-    import '/public/material-icons.css';
-
-    //we have to check we are on the client otherwise server side code complains
+    //we have to check that we are on the client otherwise server side code complains
     if(Meteor.isCordova){
+
         if(cordova.platformId == 'android'){
             //dynamic import
             import('/node_modules/quasar-framework/dist/quasar.mat.css');
@@ -72,11 +72,17 @@
         else if(cordova.platformId == 'ios'){
             import('/node_modules/quasar-framework/dist/quasar.ios.css');
         }
+
     }else{
         //default
         import('/node_modules/quasar-framework/dist/quasar.mat.css');
-    }
 
+    }
+    //we import components individually, it should reduce bundle size
+    import {
+        QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
+        QSideLink, QItemMain, QItemSide, QList, QListHeader
+    } from '/node_modules/quasar-framework/dist/quasar.common.js';
 
     export default {
         components: {
