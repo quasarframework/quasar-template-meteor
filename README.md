@@ -13,7 +13,7 @@ This is a resource which will show how to install Quasar inside the Meteor frame
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
 and then we added Quasar to that. So thankyou to Akryum for making Meteor work with Vue. - Amazing work.
 
-#### N.B. Quasar 0.14 now installs from npm, BUT there is an serious open issue.
+#### N.B. Quasar 0.14 now installs with Meteor from npm, BUT there is an serious open issue.
 #### Please wait and Watch This Space.
 
 
