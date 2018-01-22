@@ -1,8 +1,11 @@
 <template>
     <div>
-        <q-btn color="primary" @click="clickMethod()">
-            Add a record
-        </q-btn>
+        <div style="text-align: center">
+            <q-btn color="primary" @click="clickMethod()">
+                Add a record
+            </q-btn>
+        </div>
+        <div style="margin-top: 25px;">
         <q-list striped>
             <q-list-header>Striped star list</q-list-header>
             <q-item v-for="item in starRecords" :key="item._id">
@@ -11,6 +14,7 @@
                 </q-item-main>
             </q-item>
         </q-list>
+        </div>
     </div>
 </template>
 

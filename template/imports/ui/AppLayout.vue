@@ -1,55 +1,60 @@
-<template>
-    <q-layout ref="layout" view="hHr LpR lFf" :right-breakpoint="1100">
-        <!-- Header -->
+<template name="appLayout">
+
+    <q-layout ref="layout">
         <q-toolbar slot="header">
-            <q-btn flat @click="$refs.layout.toggleLeft()">
-                <q-icon name="menu" />
-            </q-btn>
-            <q-toolbar-title>
-                Layout Header
-                <span slot="subtitle">Optional subtitle</span>
-            </q-toolbar-title>
-            <q-btn flat @click="$refs.layout.toggleRight()">
-                <q-icon name="menu" />
-            </q-btn>
+             <q-btn flat @click="$refs.layout.toggleLeft()">
+                 <q-icon name="menu" />
+             </q-btn>
+             <q-toolbar-title>
+                 Layout Header
+                 <span slot="subtitle">Optional subtitle</span>
+             </q-toolbar-title>
+             <q-btn flat @click="$refs.layout.toggleRight()">
+                 <q-icon name="menu" />
+             </q-btn>
         </q-toolbar>
-        <!-- Navigation Tabs -->
         <q-tabs slot="navigation">
             <q-route-tab slot="title" icon="save" to="/" replace label="PubSub" />
             <q-route-tab slot="title" icon="alarm" to="/session" replace label="Session" />
             <q-route-tab slot="title" icon="help" to="/help" replace label="Help" />
         </q-tabs>
-        <!-- Left-side Drawer -->
-        <div slot="left">
-            <q-list no-border link inset-separator>
-                <q-list-header>Essential Links</q-list-header>
-                <q-side-link item to="/">
-                    <q-item-side icon="save" />
-                    <q-item-main label="PubSub" />
-                </q-side-link>
-                <q-side-link item to="/session">
-                    <q-item-side icon="alarm" />
-                    <q-item-main label="Session" />
-                </q-side-link>
-                <q-side-link item to="/help">
-                    <q-item-side icon="help" />
-                    <q-item-main label="Help" />
-                </q-side-link>
-             </q-list>
-        </div>
+
+ <!--      <div slot="left">
+           <q-list no-border link inset-separator>
+               <q-list-header>Essential Links</q-list-header>
+               <q-side-link item to="/">
+                   <q-item-side icon="save" />
+                   <q-item-main label="PubSub" />
+               </q-side-link>
+               <q-side-link item to="/session">
+                   <q-item-side icon="alarm" />
+                   <q-item-main label="Session" />
+               </q-side-link>
+               <q-side-link item to="/help">
+                   <q-item-side icon="help" />
+                   <q-item-main label="Help" />
+               </q-side-link>
+            </q-list>
+       </div>
+
+       <div slot="right">
+           <span>Right Side of Layout</span>
+       </div>-->
+
         <!-- IF USING subRoutes only:-->
-        <router-view/>
+        <router-view />
+
         <!-- OR ELSE, IF NOT USING subRoutes:
         <div class="layout-view"></div>-->
-        <!-- Right Side Panel -->
-        <div slot="right">
-            Right Side of Layout
-        </div>
-        <!-- Footer -->
-        <div slot="footer">
-            <span>footer is here</span>
-        </div>
+
+        <q-toolbar slot="footer">
+            <q-toolbar-title>
+                Footer is here
+            </q-toolbar-title>
+        </q-toolbar>
+
     </q-layout>
+
 </template>
 
 <script>
