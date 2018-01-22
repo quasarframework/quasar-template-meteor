@@ -13,9 +13,7 @@ This is a resource which will show how to install Quasar inside the Meteor frame
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
 and then we added Quasar to that. So thankyou to Akryum for making Meteor work with Vue. - Amazing work.
 
-#### N.B. Quasar 0.14 now installs with Meteor from npm, BUT there is an open issue with the ui code.
-##### I have gated the two side drawers, which do not appear properly. Hope to resolve this issue soon.
-
+#### Quasar 0.14 now installs with Meteor from npm.
 
 #### Installation
 
@@ -50,18 +48,15 @@ meteor
 
 ———————
 
-Then it should say:
+It should eventually say:
 App running at: http://localhost:3000/
 
 Point your desktop browser to that address.
 
-———————
-
-Quasar is also perfect for mobile apps, and this template will work there.
-Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IOS and Android.
-
-If you open Chrome dev tools and click on the mobile phone icon you should see this:
+Then if you open Chrome or Firefox dev tools and click on the mobile phone icon you should see this:
 ![you should see this](mobile.png)
+
+Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IOS and Android.
 
 #### Note:
 The 'template' folder is necessary for the *quasar cli* command to function.

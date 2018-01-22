@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="card">
+      <div class="card" style="margin-top: 15px;">
           <div class="card-title">
               <span>PubSub - Publish and Subscribe</span>
           </div>

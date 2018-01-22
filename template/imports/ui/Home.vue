@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div style="text-align: center">
+        <div style="text-align: center; margin-top: 15px;">
             <q-btn color="primary" @click="clickMethod()">
                 Add a record
             </q-btn>
