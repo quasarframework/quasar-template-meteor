@@ -1,8 +1,10 @@
 <template name="appLayout">
 
     <!-- be careful when you change the 'view' prop, check the layout docs -->
-    <!--  Lhh lpR ffr with footer class="fixed-bottom" -->
-    <q-layout ref="layout" view="Lhh lpR ffr">
+    <!--  Lhr lpr ffr - with class="fixed-bottom" on the footer seems to be the only possibility
+        that works both for desktop and mobile -->
+
+    <q-layout ref="layout" view="Lhr lpr ffr">
 
         <q-toolbar slot="header">
              <q-btn flat @click="$refs.layout.toggleLeft()">
@@ -68,7 +70,7 @@
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
 
     //we've had to symlink all the material-icons material from /node-modules/quasar-extras/material-icons
-    //to /public because for some reason material-icons.css cannot find './MaterialIcons-Regular.woff'
+    //to /public because otherwise for some reason material-icons.css cannot find './MaterialIcons-Regular.woff'
     // even though is in the same folder as itself
     import '/public/material-icons';
 
