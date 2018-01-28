@@ -3,11 +3,11 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 22nd January 2018).
+(Updated 28th January 2018).
 
 Quasar 0.14.7
 
-Meteor 1.6.0.1
+Meteor 1.6.1
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
@@ -34,6 +34,11 @@ cd template
 meteor npm install
 ```
 **Then here we transpile an es6 .js file to commonjs which meteor needs**
+
+We hope that in Meteor 1.6.2 we will be able to install without the transpile. 
+Fingers crossed....
+
+Do not remove .babelrc.RENAMED. It is necessary for the transpile script.
 
 ```
 npm run transpile
