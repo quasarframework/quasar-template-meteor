@@ -1,10 +1,10 @@
 <template name="appLayout">
 
     <!-- be careful when you change the 'view' prop, check the layout docs -->
-    <!--  Lhr lpr ffr - with class="fixed-bottom" on the footer seems to be the only possibility
+    <!--  LHr lpR lfr - with class="fixed-bottom" on the footer seems to be the only possibility
         that works both for desktop and mobile -->
 
-    <q-layout ref="layout" view="Lhr lpr ffr">
+    <q-layout ref="layout" view="LHr lpR lfr">
 
         <q-toolbar slot="header">
              <q-btn flat @click="$refs.layout.toggleLeft()">
