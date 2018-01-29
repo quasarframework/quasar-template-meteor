@@ -3,9 +3,11 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 28th January 2018).
+(Updated 29th January 2018).  
+#### Corrected ui problem !
+(the ui was adding large amounts of padding due to dynamic imports of the css. This was corrected in 0.14.8)
 
-Quasar 0.14.7
+Quasar 0.14.8
 
 Meteor 1.6.1
 

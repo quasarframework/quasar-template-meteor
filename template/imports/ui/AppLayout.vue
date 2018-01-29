@@ -4,7 +4,7 @@
     <!--  LHr lpR lfr - with class="fixed-bottom" on the footer seems to be the only possibility
         that works both for desktop and mobile -->
 
-    <q-layout ref="layout" view="LHr lpR lfr">
+    <q-layout ref="layout" view="LHr lpR lFr">
 
         <q-toolbar slot="header">
              <q-btn flat @click="$refs.layout.toggleLeft()">
@@ -54,7 +54,7 @@
         <!-- OR ELSE, IF NOT USING subRoutes:
         <div class="layout-view"></div>-->
 
-        <q-toolbar slot="footer" class="fixed-bottom">
+        <q-toolbar slot="footer">
             <q-toolbar-title>
                 Footer is here
             </q-toolbar-title>
