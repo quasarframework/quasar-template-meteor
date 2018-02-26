@@ -6,53 +6,58 @@
 
     <q-layout ref="layout" view="LHr lpR lFr">
 
-        <q-toolbar slot="header">
-             <q-btn flat @click="$refs.layout.toggleLeft()">
-                 <q-icon name="menu" />
-             </q-btn>
-             <q-toolbar-title>
-                 Title
-                 <!--<span slot="subtitle">Optional subtitle</span>-->
-             </q-toolbar-title>
-             <q-btn flat @click="$refs.layout.toggleRight()">
-                 <q-icon name="menu" />
-             </q-btn>
-        </q-toolbar>
-        <q-tabs slot="navigation">
-            <q-route-tab slot="title" icon="save" to="/" replace label="PubSub" />
-            <q-route-tab slot="title" icon="alarm" to="/session" replace label="Session" />
-            <q-route-tab slot="title" icon="help" to="/help" replace label="Help" />
-        </q-tabs>
+        <q-layout-header>
+            <q-toolbar>
+                <q-btn
+                        flat round dense
+                        @click="showLeft = !showLeft"
+                        icon="menu"
+                />
 
-        <div slot="left">
+                <q-toolbar-title>
+                    Layout Header
+                    <!--<span slot="subtitle">Optional subtitle</span>-->
+                </q-toolbar-title>
 
+                <!-- showRight is a model attached to right side drawer below -->
+                <q-btn
+                        flat round dense
+                        @click="showRight = !showRight"
+                        icon="menu"
+                />
+            </q-toolbar>
+            <q-tabs>
+                <q-route-tab slot="title" icon="save" to="/" replace label="PubSub" />
+                <q-route-tab slot="title" icon="alarm" to="/session" replace label="Session" />
+                <q-route-tab slot="title" icon="help" to="/help" replace label="Help" />
+            </q-tabs>
+        </q-layout-header>
+
+        <q-layout-drawer side="left" v-model="showLeft">
             <q-list no-border link inset-separator>
                 <q-list-header>Essential Links</q-list-header>
-                <q-side-link item to="/">
+                <q-item to="/">
                     <q-item-side icon="save" />
                     <q-item-main label="PubSub" />
-                </q-side-link>
-                <q-side-link item to="/session">
+                </q-item>
+                <q-item to="/session">
                     <q-item-side icon="alarm" />
                     <q-item-main label="Session" />
-                </q-side-link>
-                <q-side-link item to="/help">
+                </q-item>
+                <q-item to="/help">
                     <q-item-side icon="help" />
                     <q-item-main label="Help" />
-                </q-side-link>
+                </q-item>
             </q-list>
+        </q-layout-drawer>
 
-       </div>
-
-        <div slot="right">
+        <q-layout-drawer side="right" v-model="showRight">
             <span>Right Side of Layout</span>
-        </div>
+        </q-layout-drawer>
 
-        <!-- IF USING subRoutes only:-->
-        <router-view></router-view>
-
-        <!-- OR ELSE, IF NOT USING subRoutes:
-        <div class="layout-view"></div>-->
+        <q-page-container>
+            <router-view></router-view>
+        </q-page-container>
 
         <q-toolbar slot="footer">
             <q-toolbar-title>
@@ -76,30 +81,32 @@
     // even though is in the same folder as itself
     import '/public/material-icons';
 
-    //we have to check that we are on the client otherwise server side code complains
-    if(Meteor.isCordova){
-
-        if(cordova.platformId == 'android'){
-            //dynamic import
-            import('/node_modules/quasar-framework/dist/quasar.mat.css');
-        }
-        else if(cordova.platformId == 'ios'){
-            import('/node_modules/quasar-framework/dist/quasar.ios.css');
-        }
-
+    if(Meteor.isCordova && cordova.platformId == 'ios'){
+        import('/node_modules/quasar-framework/dist/umd/quasar.ios.css');
     }else{
-        //default dynamic import
-        import('/node_modules/quasar-framework/dist/quasar.mat.css');
-
+        import('/node_modules/quasar-framework/dist/umd/quasar.mat.css');
     }
-    //we import components individually, it should reduce bundle size
+
+
     import {
         QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
-        QSideLink, QItemMain, QItemSide, QList, QListHeader
-    } from '/node_modules/quasar-framework/dist/quasar.common.js';
+        QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutDrawer, QPageContainer, QItem
+    } from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
+
 
     export default {
+        data: function () {
+            return {
+                showLeft: false,
+                showRight: false
+            }
+        },
+        props: {
+            uiid: 'mat'
+        },
         components: {
+            QLayoutHeader,
+            QLayoutDrawer,
             QLayout,
             QToolbar,
             QToolbarTitle,
@@ -108,8 +115,9 @@
             QRouteTab,
             QBtn,
             QIcon,
-            QSideLink, QItemMain, QItemSide,
-            QList, QListHeader
+            QItemMain, QItemSide,
+            QList, QListHeader, QPageContainer,
+            QItem
         }
     }
 </script>

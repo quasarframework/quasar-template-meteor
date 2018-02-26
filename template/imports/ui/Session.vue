@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="text-align: center; margin: 10px;">
         <H5>{{ letsCountText }}</H5>
         <h1>{{ count }}</h1>
         <div><q-progress :percentage="progress" class="positive"></q-progress></div>
@@ -9,7 +9,7 @@
 
 <script>
     import {Session} from 'meteor/session';
-    import { QProgress } from '/node_modules/quasar-framework/dist/quasar.common.js';
+    import { QProgress } from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
 
     const MAX_COUNT = 3;
     let myInterval;

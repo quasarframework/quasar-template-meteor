@@ -1,5 +1,6 @@
 
 import {Meteor} from 'meteor/meteor';
+//quasar framework is based on vuejs
 import Vue from 'vue';
 
 
@@ -20,8 +21,7 @@ import AppLayout from '/imports/ui/AppLayout.vue';
 
 
 //import Quasar globally
-//import Quasar from 'quasar-framework';
-import Quasar from '/node_modules/quasar-framework/dist/quasar.common.js';
+import Quasar from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
 Vue.use(Quasar, {});
 
 //App start

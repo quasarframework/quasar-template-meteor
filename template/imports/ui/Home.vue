@@ -20,9 +20,9 @@
 
 <script>
     import { Meteor } from 'meteor/meteor';
-    import {Stars} from '../lib/collections';
+    import { Stars } from '../lib/collections';
 
-    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.common.js';
+    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
 
 
     export default {
