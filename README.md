@@ -13,6 +13,18 @@ This is a resource which will show how to install Quasar inside the Meteor frame
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
 and then we added Quasar to that. So thankyou to Akryum for making Meteor work with Vue. - Amazing work.
 
+
+#### Please note these changes from 0.14.8
+Quasar have split the es6 .js file into two:
+- one for 'ios' 
+- and one for 'mat' (material design - Android)
+
+So I have changed the **transpile** command in package.json to transpile **both files.**
+
+This also means that if you want to compile for 'ios' instead of 'mat' you will need to change your **import** from:
+ '/node_modules/quasar-framework/dist/quasar.mat.common.js'
+ to '/node_modules/quasar-framework/dist/quasar.ios.common.js'
+
 #### Installation
 
 **clone this repository:**

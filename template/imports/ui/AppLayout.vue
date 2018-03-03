@@ -59,11 +59,13 @@
             <router-view></router-view>
         </q-page-container>
 
-        <q-toolbar slot="footer">
-            <q-toolbar-title>
-                Footer is here
-            </q-toolbar-title>
-        </q-toolbar>
+        <q-layout-footer>
+            <q-toolbar>
+                <q-toolbar-title>
+                    Footer is here
+                </q-toolbar-title>
+            </q-toolbar>
+        </q-layout-footer>
 
     </q-layout>
 
@@ -87,11 +89,16 @@
         import('/node_modules/quasar-framework/dist/umd/quasar.mat.css');
     }
 
-
+    //swap the comments on these lines if you want to compile for ios
     import {
         QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
-        QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutDrawer, QPageContainer, QItem
+        QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutFooter, QLayoutDrawer, QPageContainer, QItem
     } from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
+    // import {
+    //     QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
+    //     QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutFooter, QLayoutDrawer, QPageContainer, QItem
+    // } from '/node_modules/quasar-framework/dist/quasar.ios.common.js';
+
 
 
     export default {
@@ -105,6 +112,7 @@
             uiid: 'mat'
         },
         components: {
+            QLayoutFooter,
             QLayoutHeader,
             QLayoutDrawer,
             QLayout,

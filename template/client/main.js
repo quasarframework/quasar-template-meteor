@@ -21,7 +21,9 @@ import AppLayout from '/imports/ui/AppLayout.vue';
 
 
 //import Quasar globally
+//swap the comment on these lines if you want to compile for ios
 import Quasar from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
+//import Quasar from '/node_modules/quasar-framework/dist/quasar.ios.common.js';
 Vue.use(Quasar, {});
 
 //App start

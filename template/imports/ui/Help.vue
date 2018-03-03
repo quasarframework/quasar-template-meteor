@@ -24,8 +24,9 @@
 
 
 <script>
-
+    //swap the comment on these lines if you want to compile for ios
     import { QCard, QCardTitle, QCardMain } from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
+    // import { QCard, QCardTitle, QCardMain } from '/node_modules/quasar-framework/dist/quasar.ios.common.js';
 
 
     export default {
