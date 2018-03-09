@@ -3,9 +3,9 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 26th February 2018).  
+(Updated 9th March 2018).  
 
-Quasar 0.15.3
+Quasar 0.15.6
 
 Meteor 1.6.1
 
@@ -53,7 +53,8 @@ Do not remove .babelrc.RENAMED. It is necessary for the transpile script.
 ```
 npm run transpile
 ```
-
+**N.B. Windows users** - you should use transpile.bat instead of the above command - thanks to Antonin Adert.
+If you want to see in detail what he did, please check out https://github.com/quasarframework/quasar-template-meteor/issues/18
 
 **run meteor (still inside the template folder)**
 
