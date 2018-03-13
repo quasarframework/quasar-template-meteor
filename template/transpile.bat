@@ -1,0 +1,1 @@
+move .\.babelrc.RENAMED .\.babelrc && .\node_modules\.bin\babel node_modules\quasar-framework\dist\quasar.ios.esm.js --out-file node_modules\quasar-framework\dist\quasar.ios.common.js && .\node_modules\.bin\babel node_modules\quasar-framework\dist\quasar.mat.esm.js --out-file node_modules\quasar-framework\dist\quasar.mat.common.js && move .\.babelrc .\.babelrc.RENAMED 
