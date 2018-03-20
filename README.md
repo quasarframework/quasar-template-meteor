@@ -3,9 +3,9 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 9th March 2018).  
+(Updated 19th March 2018).  
 
-Quasar 0.15.6
+Quasar 0.15.8
 
 Meteor 1.6.1
 
@@ -24,6 +24,7 @@ So I have changed the **transpile** command in package.json to transpile **both 
 This also means that if you want to compile for 'ios' instead of 'mat' you will need to change your **import** from:
  '/node_modules/quasar-framework/dist/quasar.mat.common.js'
  to '/node_modules/quasar-framework/dist/quasar.ios.common.js'
+ 
 
 #### Installation
 
@@ -88,6 +89,6 @@ To use Meteor, just cd into the 'template' folder and run all your usual meteor 
 There may be a better way of doing this.
 
 2) Quasar es6 code in v0.15 has now been split into two: one for ios and one for material design.
-I have not yet worked out how to switch automatically to the correct .js file according to the platform.
-I hope to solve this soon.
+I have not worked out how to switch automatically to the correct .js file according to the platform.
+
 
