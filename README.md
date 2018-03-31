@@ -3,9 +3,9 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 19th March 2018).  
+(Updated 31st March 2018).
 
-Quasar 0.15.8
+Quasar 0.15.10
 
 Meteor 1.6.1
 
@@ -74,6 +74,15 @@ Then if you open Chrome or Firefox dev tools and click on the mobile phone icon 
 ![you should see this](mobile.png)
 
 Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IOS and Android.
+
+This project uses the Akryum projects to get Meteor working with vuejs and quasar-framework.
+The most useful page to consult is:
+https://github.com/meteor-vue/vue-meteor-tracker
+
+This is the main page for all the Meteor/Vuejs projects:
+https://github.com/meteor-vue/vue-meteor
+
+
 
 #### Note:
 The 'template' folder is necessary for the *quasar cli* command to function.
