@@ -3,11 +3,11 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 31st March 2018).
+(Updated 24th May 2018).
 
-Quasar 0.15.10
+Quasar 0.16.0
 
-Meteor 1.6.1
+Meteor 1.6.1.1
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
@@ -97,7 +97,7 @@ To use Meteor, just cd into the 'template' folder and run all your usual meteor 
 1) I've had to create symlinks from /node_modules/quasar-extras to the /public folder for the Material Design icons.
 There may be a better way of doing this.
 
-2) Quasar es6 code in v0.15 has now been split into two: one for ios and one for material design.
+2) Quasar es6 code from v0.15 was split into two: one for ios and one for material design.
 I have not worked out how to switch automatically to the correct .js file according to the platform.
 
 
