@@ -23,8 +23,8 @@
     import { Stars } from '../lib/collections';
 
     //swap the Comment on these two lines if you want to compile for ios
-    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
-//    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.ios.common.js';
+    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.mat.esm.js';
+    //    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.ios.esm.js';
 
 
     export default {

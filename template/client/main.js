@@ -1,5 +1,5 @@
 
-import {Meteor} from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 //quasar framework is based on vuejs
 import Vue from 'vue';
 
@@ -22,8 +22,9 @@ import AppLayout from '/imports/ui/AppLayout.vue';
 
 //import Quasar globally
 //swap the comment on these lines if you want to compile for ios
-import Quasar from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
-//import Quasar from '/node_modules/quasar-framework/dist/quasar.ios.common.js';
+import Quasar from '/node_modules/quasar-framework/dist/quasar.mat.esm.js';
+//import Quasar from '/node_modules/quasar-framework/dist/quasar.ios.esm.js';
+
 Vue.use(Quasar, {});
 
 //App start

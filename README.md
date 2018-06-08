@@ -3,23 +3,29 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 24th May 2018).
+(Updated 8th June 2018).
 
 Quasar 0.16.0
 
-Meteor 1.6.1.1
+#### Meteor 1.7.0.1
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
 and then we added Quasar to that. So thankyou to Akryum for making Meteor work with Vue. - Amazing work.
 
 
+#### We no longer have to transpile Quasar !
+With the arrival of **Meteor 1.7**, we just have to put a link to /node-modules/quasar-framework in the /imports folder
+and then add some code on the server-side to indicate that we want to ignore legacy browsers
+- please see setMinimumBrowserVersions() in /imports/startup/server/index.js
+
+In this way Quasar compiles normally and we no longer get 'unexpected thang: export' messages....
+
+
 #### Please note these changes from 0.14.8
 Quasar have split the es6 .js file into two:
 - one for 'ios' 
 - and one for 'mat' (material design - Android)
-
-So I have changed the **transpile** command in package.json to transpile **both files.**
 
 This also means that if you want to compile for 'ios' instead of 'mat' you will need to change your **import** from:
  '/node_modules/quasar-framework/dist/quasar.mat.common.js'
@@ -44,18 +50,6 @@ cd quasar-template-meteor/template
 ```
 meteor npm install
 ```
-**Then here we transpile two es6 .js files (one for ios, one for material design) to commonjs which meteor needs**
-
-We hope that in Meteor 1.6.2 we will be able to install without the transpile. 
-Fingers crossed....
-
-Do not remove .babelrc.RENAMED. It is necessary for the transpile script.
-
-```
-npm run transpile
-```
-**N.B. Windows users** - you should use transpile.bat instead of the above command - thanks to Antonin Adert.
-If you want to see in detail what he did, please check out https://github.com/quasarframework/quasar-template-meteor/issues/18
 
 **run meteor (still inside the template folder)**
 
@@ -94,7 +88,8 @@ To use Meteor, just cd into the 'template' folder and run all your usual meteor 
 
 **Problems:**
 
-1) I've had to create symlinks from /node_modules/quasar-extras to the /public folder for the Material Design icons.
+1) I've had to create a symlink from /node_modules/quasar-extras to the /public folder for the Material Design icons .woff file.
+Otherwise it can't be found by the .css file.
 There may be a better way of doing this.
 
 2) Quasar es6 code from v0.15 was split into two: one for ios and one for material design.

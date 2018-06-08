@@ -11,8 +11,8 @@
     import {Session} from 'meteor/session';
 
     //swap the comment on these lines if you want to compile for ios
-    import { QProgress } from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
-    //import { QProgress } from '/node_modules/quasar-framework/dist/quasar.ios.common.js';
+    import { QProgress } from '/node_modules/quasar-framework/dist/quasar.mat.esm.js';
+    //import { QProgress } from '/node_modules/quasar-framework/dist/quasar.ios.esm.js';
 
     const MAX_COUNT = 3;
     let myInterval;

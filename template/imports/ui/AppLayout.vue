@@ -78,26 +78,26 @@
     //See main.js for the global import of 'Quasar' and vue.use() method.
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
 
-    //we've had to symlink all the material-icons material from /node-modules/quasar-extras/material-icons
-    //to /public because otherwise for some reason material-icons.css cannot find './MaterialIcons-Regular.woff'
-    // even though is in the same folder as itself
-    import '/public/material-icons';
+    //For some reason material-icons.css cannot find './MaterialIcons-Regular.woff'
+    //even though is in the same folder as itself, so we've had to symlink
+    // /node-modules/quasar-extras/material-icons/MaterialIcons-Regular.woff to /public
+    import '/node_modules/quasar-extras/material-icons/material-icons.css';
 
     if(Meteor.isCordova && cordova.platformId == 'ios'){
-        import('/node_modules/quasar-framework/dist/umd/quasar.ios.css');
+        import('/node_modules/quasar-framework/dist/umd/quasar.ios.min.css');
     }else{
-        import('/node_modules/quasar-framework/dist/umd/quasar.mat.css');
+        import('/node_modules/quasar-framework/dist/umd/quasar.mat.min.css');
     }
 
     //swap the comments on these lines if you want to compile for ios
     import {
         QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
         QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutFooter, QLayoutDrawer, QPageContainer, QItem
-    } from '/node_modules/quasar-framework/dist/quasar.mat.common.js';
+    } from '/node_modules/quasar-framework/dist/quasar.mat.esm.js';
     // import {
     //     QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
     //     QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutFooter, QLayoutDrawer, QPageContainer, QItem
-    // } from '/node_modules/quasar-framework/dist/quasar.ios.common.js';
+    // } from '/node_modules/quasar-framework/dist/quasar.ios.esm.js';
 
 
 
