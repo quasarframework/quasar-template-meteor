@@ -21,6 +21,8 @@ and then add some code on the server-side to indicate that we want to ignore leg
 
 In this way Quasar compiles normally and we no longer get 'unexpected thang: export' messages....
 
+See this link for explanations of the changes that enabled this in Meteor 1.7:
+https://github.com/meteor/meteor/blob/devel/History.md#v1421
 
 #### Please note these changes from 0.14.8
 Quasar have split the es6 .js file into two:
@@ -50,6 +52,13 @@ cd quasar-template-meteor/template
 ```
 meteor npm install
 ```
+
+** Create a link to quasar-framework in the /imports directory
+
+```
+ln -s ../node_modules/quasar-framework imports
+```
+
 
 **run meteor (still inside the template folder)**
 
