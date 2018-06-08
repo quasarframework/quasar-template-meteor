@@ -53,7 +53,7 @@ cd quasar-template-meteor/template
 meteor npm install
 ```
 
-** Create a link to quasar-framework in the /imports directory**
+**Create a link to quasar-framework in the /imports directory**
 
 ```
 ln -s ../node_modules/quasar-framework imports
