@@ -97,11 +97,7 @@ To use Meteor, just cd into the 'template' folder and run all your usual meteor 
 
 **Problems:**
 
-1) I've had to create a symlink from /node_modules/quasar-extras to the /public folder for the Material Design icons .woff file.
-Otherwise it can't be found by the .css file.
-There may be a better way of doing this.
-
-2) Quasar es6 code from v0.15 was split into two: one for ios and one for material design.
-I have not worked out how to switch automatically to the correct .js file according to the platform.
+Quasar es6 code from v0.15 was split into two: one for ios and one for material design.
+There may be a way to switch automatically to the correct .js file according to the platform ...
 
 

@@ -78,9 +78,6 @@
     //See main.js for the global import of 'Quasar' and vue.use() method.
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
 
-    //For some reason material-icons.css cannot find './MaterialIcons-Regular.woff'
-    //even though is in the same folder as itself, so we've had to symlink
-    // /node-modules/quasar-extras/material-icons/MaterialIcons-Regular.woff to /public
     import '/node_modules/quasar-extras/material-icons/material-icons.css';
 
     if(Meteor.isCordova && cordova.platformId == 'ios'){
