@@ -69,8 +69,7 @@
             },
             getCounter () {
                 if(this.counter >= this.starNames.length - 1){
-                    console.log('starNames', starNames);
-                     return -1;
+                    return -1;
                 }
                 this.counter++;
                 return this.counter;

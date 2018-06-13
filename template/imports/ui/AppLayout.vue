@@ -1,8 +1,5 @@
 <template name="appLayout">
 
-    <!-- be careful when you change the 'view' prop, check the layout docs -->
-    <!--  LHr lpR lfr - with class="fixed-bottom" on the footer seems to be the only possibility
-        that works both for desktop and mobile -->
 
     <q-layout ref="layout" view="LHr lpR lFr">
 
@@ -15,8 +12,7 @@
                 />
 
                 <q-toolbar-title>
-                    Layout Header
-                    <!--<span slot="subtitle">Optional subtitle</span>-->
+                    <span>Layout Header</span>
                 </q-toolbar-title>
 
                 <!-- showRight is a model attached to right side drawer below -->
@@ -35,7 +31,7 @@
 
         <q-layout-drawer side="left" v-model="showLeft">
             <q-list no-border link inset-separator>
-                <q-list-header>Essential Links</q-list-header>
+                <q-list-header><span>Essential Links</span></q-list-header>
                 <q-item to="/">
                     <q-item-side icon="save" />
                     <q-item-main label="PubSub" />
@@ -62,7 +58,7 @@
         <q-layout-footer>
             <q-toolbar>
                 <q-toolbar-title>
-                    Footer is here
+                    <span>Footer is here</span>
                 </q-toolbar-title>
             </q-toolbar>
         </q-layout-footer>
@@ -73,12 +69,12 @@
 
 <script>
 
-
+    import {Meteor} from 'meteor/meteor';
 
     //See main.js for the global import of 'Quasar' and vue.use() method.
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
 
-    import '/node_modules/quasar-extras/material-icons/material-icons.css';
+    import '/node_modules/quasar-extras/material-icons';
 
     if(Meteor.isCordova && cordova.platformId == 'ios'){
         import('/node_modules/quasar-framework/dist/umd/quasar.ios.min.css');
