@@ -57,8 +57,14 @@ meteor npm install
 
 ```
 ln -s ../node_modules/quasar-framework imports
-```
 
+```
+(If you are doing this on *Windows* the link command is:
+```
+mklink /D "imports\quasar-framework" "..\node_modules\quasar-framework\"
+```
+ - thanks to Noboxulus for working this out)
+ 
 
 **run meteor (still inside the template folder)**
 
