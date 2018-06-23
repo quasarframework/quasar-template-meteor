@@ -64,7 +64,7 @@ ln -s ../node_modules/quasar-framework imports
 mklink /D "imports\quasar-framework" "..\node_modules\quasar-framework\"
 ```
  - thanks to Noboxulus for working this out)
- 
+
 
 **run meteor (still inside the template folder)**
 
@@ -72,6 +72,7 @@ mklink /D "imports\quasar-framework" "..\node_modules\quasar-framework\"
 meteor
 ```
 
+On Windows you will probably also have to make the link in the /public folder to the Material Icons .woff file work properly.
 ———————
 
 It should eventually say:
