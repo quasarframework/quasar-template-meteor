@@ -23,7 +23,7 @@ mobile-experience@1.0.5
 dynamic-import@0.4.0
 ongoworks:security
 insecure@1.0.7
-ecmascript@0.11.0
+ecmascript@0.11.1
 akryum:vue-component
 akryum:vue-router2
-modern-browsers
+modern-browsers@0.1.1

@@ -7,7 +7,7 @@ akryum:vue-router2@0.2.0
 akryum:vue-stylus@0.1.0
 allow-deny@1.1.0
 autoupdate@1.4.0
-babel-compiler@7.1.0
+babel-compiler@7.1.1
 babel-runtime@1.2.2
 base64@1.0.11
 binary-heap@1.0.10
@@ -24,7 +24,7 @@ ddp-server@2.2.0
 deps@1.0.12
 diff-sequence@1.1.0
 dynamic-import@0.4.0
-ecmascript@0.11.0
+ecmascript@0.11.1
 ecmascript-runtime@0.7.0
 ecmascript-runtime-client@0.7.1
 ecmascript-runtime-server@0.7.0
