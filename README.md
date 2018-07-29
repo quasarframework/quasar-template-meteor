@@ -74,7 +74,9 @@ meteor
 
 On Windows you will also have to make the link in the /public folder to the Material Icons .woff file work properly:
 First remove the current link, then run the following windows command -
+
 mklink "public\MaterialIcons-Regular.woff" "..\node_modules\quasar-extras\material-icons\MaterialIcons-Regular.woff"
+
 (thanks again to Noboxulus)
 ———————
 
