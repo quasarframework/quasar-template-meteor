@@ -20,7 +20,7 @@ akryum:vue
 akryum:vue-stylus
 static-html
 mobile-experience@1.0.5
-dynamic-import@0.4.0
+dynamic-import@0.4.2
 ongoworks:security
 insecure@1.0.7
 ecmascript@0.11.1
