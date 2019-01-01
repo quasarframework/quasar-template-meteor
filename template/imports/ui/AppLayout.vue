@@ -74,6 +74,8 @@
     //See main.js for the global import of 'Quasar' and vue.use() method.
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
 
+    // To make the material-icons appear, we also have to add links in the /public folder from the .css and .woff files
+    // in node_modules/quasar-extras/material-icons
     import '/node_modules/quasar-extras/material-icons';
 
     if(Meteor.isCordova && cordova.platformId == 'ios'){
