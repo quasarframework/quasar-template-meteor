@@ -76,7 +76,7 @@
 
     // To make the material-icons appear, we also have to add links in the /public folder from the .css and .woff files
     // in node_modules/quasar-extras/material-icons
-    import '/node_modules/quasar-extras/material-icons';
+    //import '/node_modules/quasar-extras/material-icons';
 
     if(Meteor.isCordova && cordova.platformId == 'ios'){
         import('/node_modules/quasar-framework/dist/umd/quasar.ios.min.css');
@@ -94,7 +94,8 @@
     //     QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutFooter, QLayoutDrawer, QPageContainer, QItem
     // } from '/node_modules/quasar-framework/dist/quasar.ios.esm.js';
 
-
+    //I find that this import for the material-icons needs to come after all the other quasar imports
+    import '/node_modules/quasar-extras/material-icons';
 
     export default {
         data: function () {
