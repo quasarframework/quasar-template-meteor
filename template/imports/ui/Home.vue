@@ -6,12 +6,12 @@
             </q-btn>
         </div>
         <div style="margin-top: 25px;">
-        <q-list striped>
-            <q-list-header>Striped star list</q-list-header>
+        <q-list bordered separator padding>
+            <q-item-label header>List of stars</q-item-label>
             <q-item v-for="item in starRecords" :key="item._id">
-                <q-item-main>
+                <q-item>
                     {{ item.name }}
-                </q-item-main>
+                </q-item>
             </q-item>
         </q-list>
         </div>
@@ -22,15 +22,13 @@
     import { Meteor } from 'meteor/meteor';
     import { Stars } from '../lib/collections';
 
-    //swap the Comment on these two lines if you want to compile for ios
-    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.mat.esm.js';
-    //    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar-framework/dist/quasar.ios.esm.js';
+    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar/dist/quasar.esm';
 
 
     export default {
         data() {
             return {
-                starNames: ['Dog Star', 'Sirius', 'Pole Star', 'Sun', 'Arthur'],
+                starNames: ['Dog Star', 'Pole Star', 'Sun', 'Arthur', 'Elvis'],
                 counter: -1
             }
         },
@@ -49,11 +47,7 @@
                 update () {
                     var starsFound = Stars.find();
                     if(starsFound.count() > this.starNames.length){
-                        starsFound.forEach(function(doc, index){
-                            Stars.remove({_id: doc._id});
-                        });
-                        this.counter = -1;
-                        alert('starting again ..');
+                        this.clearDb(starsFound);
                     }
                     return starsFound;
                 }
@@ -64,8 +58,16 @@
                 if(this.counter < this.starNames.length - 1) {
                     Stars.insert({name: this.starNames[this.getCounter()]});
                 }else{
-                    alert('There are only five stars')
+                    alert('There are only five stars');
+                    this.clearDb(Stars.find());
                 }
+            },
+            clearDb (starsFound) {
+                starsFound.forEach(function(doc, index){
+                    Stars.remove({_id: doc._id});
+                });
+                this.counter = -1;
+                alert('starting again ..');
             },
             getCounter () {
                 if(this.counter >= this.starNames.length - 1){

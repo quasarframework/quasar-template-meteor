@@ -3,9 +3,12 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 1st January 2019).
+(Updated 24th February 2019).
 
-Quasar 0.17.18
+#### Quasar 1.0.0 beta
+Quasar in npm is now found at quasar, not quasar-framework. And quasar-extras has moved to @quasar/extras.
+There are a quite a few breaking changes in 1.0.0 so the ui code has changed from what was here for version 0.17.
+
 
 #### Meteor 1.8.0.2
 
@@ -26,14 +29,6 @@ In this way Quasar compiles normally and we no longer get 'unexpected token: exp
 
 See this link for explanations of the changes that enabled this in Meteor 1.7:
 https://github.com/meteor/meteor/blob/devel/History.md#v1421
-
-Quasar have split the es6 .js file into two:
-- one for 'ios' 
-- and one for 'mat' (material design - Android)
-
-This means that if you want to compile for 'ios' instead of 'mat' you will need to change your **import** from:
- '/node_modules/quasar-framework/dist/quasar.mat.common.js'
- to '/node_modules/quasar-framework/dist/quasar.ios.common.js'
  
 
 #### Installation
@@ -55,15 +50,15 @@ cd quasar-template-meteor/template
 meteor npm install
 ```
 
-**Create a link to quasar-framework in the /imports directory**
+**Create a link to quasar in the /imports directory**
 
 ```
-ln -s ../node_modules/quasar-framework imports
+ln -s ../node_modules/quasar imports
 
 ```
 (If you are doing this on *Windows* the link command is:
 ```
-mklink /D "imports\quasar-framework" "..\node_modules\quasar-framework\"
+mklink /D "imports\quasar" "..\node_modules\quasar\"
 ```
  - thanks to Noboxulus for working this out)
 
@@ -71,12 +66,12 @@ mklink /D "imports\quasar-framework" "..\node_modules\quasar-framework\"
 This makes the material-icons stuff appear
 
 ```
-ln -s ../node_modules/quasar-extras/material-icons/web-font public
+ln -s ../node_modules/@quasar/extras/material-icons/web-font public
 
 ```
 (If you are doing this on *Windows* the link command is:
 ```
-mklink /D "public\web-font" "..\node_modules\quasar-extras\material-icons\web-font"
+mklink /D "public\web-font" "..\node_modules\@quasar\extras\material-icons\web-font"
 ```
  - thanks to Noboxulus)
 
@@ -107,16 +102,13 @@ https://github.com/meteor-vue/vue-meteor
 
 
 #### Note:
-The 'template' folder is necessary for the *quasar cli* command to function.
-All meteor commands however should only be run once you are inside the 'template' folder.
-This extra 'template' folder is there because quasar-framework requires it. Quasar-framework uses Webpack for its builds, but Meteor does not.
-This means that it is unlikely that you will be able to use *quasar cli*, for example, because it all leads up to a quasar build using webpack.
+The 'template' folder is a necessary part of the quasar framework.
+However all meteor commands should only be run once you have moved inside the 'template' folder.
+This extra 'template' folder is there because quasar-framework requires it. 
+However, Quasar-framework uses Webpack for its builds, but Meteor has its own build system.
+This means that it is unlikely that you will be able to use *quasar cli*, because it all leads up to a quasar build using webpack.
 
 To use Meteor, just cd into the 'template' folder and run all your usual meteor commands from there.
 
-**Problems:**
-
-Quasar es6 code from v0.15 was split into two: one for ios and one for material design.
-There may be a way to switch automatically to the correct .js file according to the platform ...
 
 

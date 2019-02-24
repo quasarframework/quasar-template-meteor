@@ -1,9 +1,9 @@
 <template name="appLayout">
 
 
-    <q-layout ref="layout" view="LHr lpR lFr">
+        <q-layout ref="layout" view="LHr lpR lFr">
 
-        <q-layout-header>
+            <q-header elevated class="bg-primary text-white">
             <q-toolbar>
                 <q-btn
                         flat round dense
@@ -12,10 +12,9 @@
                 />
 
                 <q-toolbar-title>
-                    <span>Layout Header</span>
+                    Layout Header
                 </q-toolbar-title>
 
-                <!-- showRight is a model attached to right side drawer below -->
                 <q-btn
                         flat round dense
                         @click="showRight = !showRight"
@@ -27,41 +26,50 @@
                 <q-route-tab slot="title" icon="alarm" to="/session" replace label="Session" />
                 <q-route-tab slot="title" icon="help" to="/help" replace label="Help" />
             </q-tabs>
-        </q-layout-header>
+        </q-header>
 
-        <q-layout-drawer side="left" v-model="showLeft">
+        <q-drawer side="left" v-model="showLeft">
             <q-list no-border link inset-separator>
-                <q-list-header><span>Essential Links</span></q-list-header>
-                <q-item to="/">
-                    <q-item-side icon="save" />
-                    <q-item-main label="PubSub" />
+                <q-item-label header>Essential Links</q-item-label>
+                <q-item clickable v-ripple  to="/">
+                    <q-item-section avatar>
+                        <q-icon color="primary" name="save" />
+                    </q-item-section>
+                    <q-item-section>PubSub</q-item-section>
                 </q-item>
-                <q-item to="/session">
-                    <q-item-side icon="alarm" />
-                    <q-item-main label="Session" />
+                <q-separator spaced inset="item" />
+                <q-item clickable v-ripple  to="/session">
+                    <q-item-section avatar>
+                        <q-icon color="primary" name="alarm" />
+                    </q-item-section>
+                    <q-item-section>Session</q-item-section>
                 </q-item>
-                <q-item to="/help">
-                    <q-item-side icon="help" />
-                    <q-item-main label="Help" />
+                <q-separator spaced inset="item" />
+                <q-item clickable v-ripple  to="/help">
+                    <q-item-section avatar>
+                        <q-icon color="primary" name="help" />
+                    </q-item-section>
+                    <q-item-section>Help</q-item-section>
                 </q-item>
+                <q-separator spaced inset="item" />
             </q-list>
-        </q-layout-drawer>
+        </q-drawer>
 
-        <q-layout-drawer side="right" v-model="showRight">
-            <span>Right Side of Layout</span>
-        </q-layout-drawer>
+        <q-drawer side="right" v-model="showRight">
+            <span>Right Drawer</span>
+        </q-drawer>
 
         <q-page-container>
             <router-view></router-view>
         </q-page-container>
 
-        <q-layout-footer>
+        <q-footer>
             <q-toolbar>
                 <q-toolbar-title>
                     <span>Footer is here</span>
                 </q-toolbar-title>
             </q-toolbar>
-        </q-layout-footer>
+        </q-footer>
 
     </q-layout>
 
@@ -74,28 +82,32 @@
     //See main.js for the global import of 'Quasar' and vue.use() method.
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
 
-    // To make the material-icons appear, we also have to add links in the /public folder from the .css and .woff files
-    // in node_modules/quasar-extras/material-icons
-    //import '/node_modules/quasar-extras/material-icons';
 
-    if(Meteor.isCordova && cordova.platformId == 'ios'){
-        import('/node_modules/quasar-framework/dist/umd/quasar.ios.min.css');
-    }else{
-        import('/node_modules/quasar-framework/dist/umd/quasar.mat.min.css');
-    }
+    import '/node_modules/quasar/dist/quasar.min.css'
 
-    //swap the comments on these lines if you want to compile for ios
     import {
-        QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
-        QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutFooter, QLayoutDrawer, QPageContainer, QItem
-    } from '/node_modules/quasar-framework/dist/quasar.mat.esm.js';
-    // import {
-    //     QLayout, QToolbar, QToolbarTitle, QTabs, QTab, QRouteTab, QBtn, QIcon,
-    //     QItemMain, QItemSide, QList, QListHeader, QLayoutHeader, QLayoutFooter, QLayoutDrawer, QPageContainer, QItem
-    // } from '/node_modules/quasar-framework/dist/quasar.ios.esm.js';
+        QLayout,
+        QHeader,
+        QFooter,
+        QDrawer,
+        QToolbar,
+        QToolbarTitle,
+        QTabs,
+        QRouteTab,
+        QBtn,
+        QIcon,
+        QItem,
+        QItemSection,
+        QList,
+        QPageContainer,
+    } from '/node_modules/quasar/dist/quasar.esm';
 
+
+    // To make the material-icons appear, we also have to add links in the /public folder
+    // to the web-font folder with the .css and .woff files
+    // in node_modules/@quasar/extras/material-icons.
     //I find that this import for the material-icons needs to come after all the other quasar imports
-    import '/node_modules/quasar-extras/material-icons';
+    import '/node_modules/@quasar/extras/material-icons/material-icons';
 
     export default {
         data: function () {
@@ -108,20 +120,20 @@
             uiid: 'mat'
         },
         components: {
-            QLayoutFooter,
-            QLayoutHeader,
-            QLayoutDrawer,
             QLayout,
+            QHeader,
+            QFooter,
+            QDrawer,
             QToolbar,
             QToolbarTitle,
             QTabs,
-            QTab,
             QRouteTab,
             QBtn,
             QIcon,
-            QItemMain, QItemSide,
-            QList, QListHeader, QPageContainer,
-            QItem
+            QItem,
+            QItemSection,
+            QList,
+            QPageContainer,
         }
     }
 </script>

@@ -2,7 +2,7 @@
     <div style="text-align: center; margin: 10px;">
         <H5>{{ letsCountText }}</H5>
         <h1>{{ count }}</h1>
-        <div><q-progress :percentage="progress" class="positive"></q-progress></div>
+        <div><q-linear-progress :value="progress" class="positive"></q-linear-progress></div>
         <h2>{{ finished }}</h2>
     </div>
 </template>
@@ -10,15 +10,13 @@
 <script>
     import {Session} from 'meteor/session';
 
-    //swap the comment on these lines if you want to compile for ios
-    import { QProgress } from '/node_modules/quasar-framework/dist/quasar.mat.esm.js';
-    //import { QProgress } from '/node_modules/quasar-framework/dist/quasar.ios.esm.js';
+    import { QLinearProgress } from '/node_modules/quasar/dist/quasar.esm';
 
     const MAX_COUNT = 3;
     let myInterval;
     export default {
         components: {
-            QProgress
+            QLinearProgress
         },
         meteor: {
             data: {
@@ -32,7 +30,7 @@
                     return Session.get('count') === MAX_COUNT ? 'Finished!!' : '';
                 },
                 progress() {
-                    return Session.get('count') * (100 / MAX_COUNT);
+                    return Session.get('count') / MAX_COUNT;
                 }
             }
         },
