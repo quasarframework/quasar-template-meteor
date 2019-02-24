@@ -23,10 +23,10 @@ import AppLayout from '/imports/ui/AppLayout.vue';
 //import Quasar globally
 import Quasar from '/node_modules/quasar/dist/quasar.esm';
 
-Vue.use(Quasar, {});
 
 //App start
 Meteor.startup(() => {
+    Vue.use(Quasar, {});
     const router = routerFactory.create();
     new Vue({
         router: router,
