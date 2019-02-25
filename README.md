@@ -7,7 +7,7 @@ Quasar Starter Kit for Meteor
 
 #### Quasar 1.0.0 beta
 Quasar in npm is now found at quasar, not quasar-framework. And quasar-extras has moved to @quasar/extras.
-There are a quite a few breaking changes in 1.0.0 so the ui code has changed from what was here for version 0.17.
+There are a some breaking changes in 1.0.0 so the ui code has changed from version 0.17.
 
 
 #### Meteor 1.8.0.2
@@ -20,7 +20,7 @@ Unfortunately, there is a small problem with the meteor package called akryum:vu
 Meteor 1.8 does not play nice with versions above akryum:vue-router2@0.2.0. 
 So do not update to 0.2.2 for the moment.
 
-#### We no longer have to transpile Quasar !
+#### We no longer have to transpile Quasar
 With the arrival of **Meteor 1.7**, we just have to put a link to /node-modules/quasar-framework in the /imports folder
 and then add some code on the server-side to indicate that we want to ignore legacy browsers
 - please see setMinimumBrowserVersions() in /imports/startup/server/index.js
@@ -91,6 +91,10 @@ Then if you open Chrome or Firefox dev tools and click on the mobile phone icon 
 ![you should see this](mobile.png)
 
 Please refer to guide.meteor.com/mobile.html for how to launch mobile apps on IOS and Android.
+
+Meteor simplifies some of the difficulties of running your app on IOS for development 
+(install Xcode, plug your phone into the USB port and call 'meteor run ios-device'), however
+registering yourself as an Apple developer and working out how to register your app is a fairly frustrating experience. 
 
 This project uses the Akryum projects to get Meteor working with vuejs and quasar-framework.
 The most useful page to consult is:
