@@ -1,4 +1,4 @@
-import { Meteor } from 'meteor/meteor';
+
 import { Stars } from '../lib/collections.js';
 
 

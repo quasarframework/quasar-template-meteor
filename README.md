@@ -3,14 +3,14 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 24th February 2019).
+(Updated 21st April 2019).
 
-#### Quasar 1.0.0 beta
+#### Quasar 1.0.0-beta.18
 Quasar in npm is now found at quasar, not quasar-framework. And quasar-extras has moved to @quasar/extras.
 There are a some breaking changes in 1.0.0 so the ui code has changed from version 0.17.
 
 
-#### Meteor 1.8.0.2
+#### Meteor 1.8.1
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
@@ -64,11 +64,14 @@ mklink /D "imports\quasar" "..\node_modules\quasar\"
 
 **Create a link to the quasar-extras .woff files in the /public directory**
 This makes the material-icons stuff appear
-
 ```
 ln -s ../node_modules/@quasar/extras/material-icons/web-font public
 
 ```
+
+There is a good explanation on StackOverflow of why there is a problem with the .woff files
+https://stackoverflow.com/questions/34133808/webpack-ots-parsing-error-loading-fonts
+
 (If you are doing this on *Windows* the link command is:
 ```
 mklink /D "public\web-font" "..\node_modules\@quasar\extras\material-icons\web-font"

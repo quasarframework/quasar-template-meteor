@@ -1,9 +1,9 @@
 <template name="appLayout">
 
 
-        <q-layout ref="layout" view="LHr lpR lFr">
+    <q-layout ref="layout" view="LHr lpR lFr">
 
-            <q-header elevated class="bg-primary text-white">
+        <q-header elevated class="bg-primary text-white">
             <q-toolbar>
                 <q-btn
                         flat round dense
@@ -31,21 +31,21 @@
         <q-drawer side="left" v-model="showLeft">
             <q-list no-border link inset-separator>
                 <q-item-label header>Essential Links</q-item-label>
-                <q-item clickable v-ripple  to="/">
+                <q-item clickable to="/">
                     <q-item-section avatar>
                         <q-icon color="primary" name="save" />
                     </q-item-section>
                     <q-item-section>PubSub</q-item-section>
                 </q-item>
                 <q-separator spaced inset="item" />
-                <q-item clickable v-ripple  to="/session">
+                <q-item clickable to="/session">
                     <q-item-section avatar>
                         <q-icon color="primary" name="alarm" />
                     </q-item-section>
                     <q-item-section>Session</q-item-section>
                 </q-item>
                 <q-separator spaced inset="item" />
-                <q-item clickable v-ripple  to="/help">
+                <q-item clickable to="/help">
                     <q-item-section avatar>
                         <q-icon color="primary" name="help" />
                     </q-item-section>
@@ -83,7 +83,6 @@
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error
 
 
-    import '/node_modules/quasar/dist/quasar.min.css'
 
     import {
         QLayout,
@@ -97,17 +96,20 @@
         QBtn,
         QIcon,
         QItem,
+        QItemLabel,
         QItemSection,
         QList,
         QPageContainer,
-    } from '/node_modules/quasar/dist/quasar.esm';
+        QSeparator
+    } from 'quasar';
 
 
     // To make the material-icons appear, we also have to add links in the /public folder
     // to the web-font folder with the .css and .woff files
     // in node_modules/@quasar/extras/material-icons.
     //I find that this import for the material-icons needs to come after all the other quasar imports
-    import '/node_modules/@quasar/extras/material-icons/material-icons';
+    import "@quasar/extras/material-icons/material-icons.css";
+    import "quasar/dist/quasar.min.css";
 
     export default {
         data: function () {
@@ -131,9 +133,11 @@
             QBtn,
             QIcon,
             QItem,
+            QItemLabel,
             QItemSection,
             QList,
             QPageContainer,
+            QSeparator
         }
     }
 </script>

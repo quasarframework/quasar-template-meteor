@@ -8,9 +8,10 @@
 </template>
 
 <script>
+    import { Meteor } from 'meteor/meteor';
     import {Session} from 'meteor/session';
 
-    import { QLinearProgress } from '/node_modules/quasar/dist/quasar.esm';
+    import { QLinearProgress } from 'quasar';
 
     const MAX_COUNT = 3;
     let myInterval;

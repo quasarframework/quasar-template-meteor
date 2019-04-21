@@ -6,23 +6,30 @@
             </q-btn>
         </div>
         <div style="margin-top: 25px;">
-        <q-list bordered separator padding>
-            <q-item-label header>List of stars</q-item-label>
-            <q-item v-for="item in starRecords" :key="item._id">
-                <q-item>
-                    {{ item.name }}
+            <q-list bordered separator padding>
+                <q-item-label header>List of stars</q-item-label>
+                <q-item v-for="item in starRecords" :key="item._id">
+                    <q-item>
+                        {{ item.name }}
+                    </q-item>
                 </q-item>
-            </q-item>
-        </q-list>
+            </q-list>
         </div>
     </div>
 </template>
 
 <script>
-    import { Meteor } from 'meteor/meteor';
+
     import { Stars } from '../lib/collections';
 
-    import { QList, QListHeader, QBtn, QItem, QItemMain } from '/node_modules/quasar/dist/quasar.esm';
+    import {
+        QList,
+        QListHeader,
+        QBtn,
+        QItem,
+        QItemMain,
+        QItemLabel
+    } from 'quasar';
 
 
     export default {
@@ -37,7 +44,8 @@
             QListHeader,
             QBtn,
             QItem,
-            QItemMain
+            QItemMain,
+            QItemLabel
         },
         meteor: {
             starRecords: {

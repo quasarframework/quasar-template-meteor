@@ -1,5 +1,4 @@
 
-import { Meteor } from 'meteor/meteor';
 //quasar framework is based on vuejs
 import Vue from 'vue';
 
@@ -20,9 +19,7 @@ const routerFactory = new RouterFactory({
 import AppLayout from '/imports/ui/AppLayout.vue';
 
 
-//import Quasar globally
-import Quasar from '/node_modules/quasar/dist/quasar.esm';
-
+import { Quasar } from "quasar";
 
 //App start
 Meteor.startup(() => {
