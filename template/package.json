@@ -6,11 +6,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.3",
-    "@quasar/extras": "^1.1.1",
+    "@quasar/extras": "^1.1.2",
     "fastclick": "^1.0.6",
     "meteor-node-stubs": "^0.4.1",
     "moment": "^2.24.0",
-    "quasar": "^1.0.0-beta.18",
+    "quasar": "^1.0.0-rc.4",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.10",
     "vue-meteor-tracker": "^1.0.3",
