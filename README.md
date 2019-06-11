@@ -3,12 +3,9 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 21st April 2019).
+(Updated 11th June 2019).
 
-#### Quasar 1.0.0-beta.18
-Quasar in npm is now found at quasar, not quasar-framework. And quasar-extras has moved to @quasar/extras.
-There are a some breaking changes in 1.0.0 so the ui code has changed from version 0.17.
-
+#### Quasar 1.0.0-rc.4
 
 #### Meteor 1.8.1
 
