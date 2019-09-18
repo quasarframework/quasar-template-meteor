@@ -1,30 +1,23 @@
 
 //quasar framework is based on vuejs
 import Vue from 'vue';
+import VueRouter from 'vue-router';
+import {routes} from './routes';
 
-
-// Import the router factory
-import { RouterFactory, nativeScrollBehavior } from 'meteor/akryum:vue-router2'
-
-// Create router instance
-// See https://github.com/meteor-vue/vue-meteor/tree/master/packages/vue-router2
-// - actual routes are configured in routes.js
-const routerFactory = new RouterFactory({
-    mode: 'history',
-    scrollBehavior: nativeScrollBehavior,
-})
-
-
-// App layout
 import AppLayout from '/imports/ui/AppLayout.vue';
 
 
-import { Quasar } from "quasar";
+import { Quasar } from 'quasar';
+
+Vue.use(VueRouter);
+const router = new VueRouter({
+    routes // short for `routes: routes`
+});
+
 
 //App start
 Meteor.startup(() => {
     Vue.use(Quasar, {});
-    const router = routerFactory.create();
     new Vue({
         router: router,
         render: h => h(AppLayout),

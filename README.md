@@ -3,30 +3,16 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 11th July 2019).
+(Updated 16th September 2019).
 
-#### Quasar 1.0.4
+#### Quasar 1.1.2
 
 #### Meteor 1.8.1
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
-First of all, this was forked from **https://github.com/Akryum/meteor-vue2-example-routing**
-and then we added Quasar to that. So thankyou to Akryum for making Meteor work with Vue.
 
-Unfortunately, there is a small problem with the meteor package called akryum:vue-router2.
-Meteor 1.8 does not play nice with versions above akryum:vue-router2@0.2.0. 
-So do not update to 0.2.2 for the moment.
-
-#### We no longer have to transpile Quasar
-With the arrival of **Meteor 1.7**, we just have to put a link to /node-modules/quasar-framework in the /imports folder
-and then add some code on the server-side to indicate that we want to ignore legacy browsers
-- please see setMinimumBrowserVersions() in /imports/startup/server/index.js
-
-In this way Quasar compiles normally and we no longer get 'unexpected token: export' messages....
-
-See this link for explanations of the changes that enabled this in Meteor 1.7:
-https://github.com/meteor/meteor/blob/devel/History.md#v1421
- 
+We have removed akryum:vue-router2 and replaced it with vue-router, because akryum meteor code is not being updated.
+This does not seem to have had any repercussions or disadvantages so far.
 
 #### Installation
 
