@@ -11,9 +11,6 @@ Quasar Starter Kit for Meteor
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 
-We have removed akryum:vue-router2 and replaced it with vue-router, because akryum meteor code is not being updated.
-This does not seem to have had any repercussions or disadvantages so far.
-
 #### Installation
 
 **clone this repository:**

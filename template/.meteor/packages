@@ -16,8 +16,6 @@ es5-shim@4.8.0                # ECMAScript 5 compatibility for older browsers.
 
 session@1.2.0
 shell-server@0.4.0
-akryum:vue
-akryum:vue-stylus
 static-html
 mobile-experience@1.0.5
 dynamic-import@0.5.1
@@ -26,4 +24,4 @@ insecure@1.0.7
 ecmascript@0.12.4
 akryum:vue-component
 modern-browsers@0.1.4
-akryum:vue-router2@0.2.0
+akryum:vue
