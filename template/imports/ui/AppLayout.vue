@@ -77,7 +77,7 @@
 
 <script>
 
-    import {Meteor} from 'meteor/meteor';
+    //import {Meteor} from 'meteor/meteor';
 
     //See main.js for the global import of 'Quasar' and vue.use() method.
     //Don't move the 'Quasar' import from main.js - importing 'Quasar' later causes an error

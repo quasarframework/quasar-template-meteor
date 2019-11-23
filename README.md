@@ -3,13 +3,19 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 23rd October 2019).
+(Updated 23rd November 2019).
 
-#### Quasar 1.2.5
+#### Quasar 1.4.5
 
-#### Meteor 1.8.1
+#### Meteor 1.8.2
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
+
+With the arrival of Meteor 1.8.2 you can now simply install quasar from npm with
+```
+meteor npm install quasar
+```
+
 
 #### Installation
 
@@ -30,17 +36,6 @@ cd quasar-template-meteor/template
 meteor npm install
 ```
 
-**Create a link to quasar in the /imports directory**
-
-```
-ln -s ../node_modules/quasar imports
-
-```
-(If you are doing this on *Windows* the link command is:
-```
-mklink /D "imports\quasar" "..\node_modules\quasar\"
-```
- - thanks to Noboxulus for working this out)
 
 **Create a link to the quasar-extras .woff files in the /public directory**
 This makes the material-icons stuff appear
@@ -65,7 +60,7 @@ mklink /D "public\web-font" "..\node_modules\@quasar\extras\material-icons\web-f
 meteor
 ```
 
-It should eventually say:
+It should then say:
 App running at: http://localhost:3000/
 
 Point your desktop browser to that address.
@@ -79,7 +74,7 @@ Meteor simplifies some of the difficulties of running your app on IOS for develo
 (install Xcode, plug your phone into the USB port and call 'meteor run ios-device'), however
 registering yourself as an Apple developer and working out how to register your app is a fairly frustrating experience. 
 
-This project uses the Akryum projects to get Meteor working with vuejs and quasar-framework.
+This project uses the Akryum projects to simplify Meteor working with vuejs and quasar-framework.
 The most useful page to consult is:
 https://github.com/meteor-vue/vue-meteor-tracker
 
