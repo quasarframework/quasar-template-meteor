@@ -5,7 +5,7 @@ Quasar Starter Kit for Meteor
 
 (Updated 23rd November 2019).
 
-#### Quasar 1.4.5
+#### Quasar 1.5.9
 
 #### Meteor 1.8.2
 

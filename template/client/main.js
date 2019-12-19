@@ -7,7 +7,7 @@ import {routes} from './routes';
 import AppLayout from '/imports/ui/AppLayout.vue';
 
 
-import { Quasar } from 'quasar';
+import Quasar from 'quasar';
 
 Vue.use(VueRouter);
 const router = new VueRouter({
