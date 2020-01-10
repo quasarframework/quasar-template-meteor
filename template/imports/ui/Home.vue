@@ -1,21 +1,30 @@
 <template>
     <div>
-        <div style="text-align: center; margin-top: 15px;">
-            <q-btn color="primary" @click="clickMethod()">
-                Add a record
-            </q-btn>
-        </div>
-        <div style="margin-top: 25px;">
-            <q-list bordered separator padding>
-                <q-item-label header>List of stars</q-item-label>
-                <q-item v-for="item in starRecords" :key="item._id">
-                    <q-item>
-                        {{ item.name }}
+        <div class="row">
+                <q-btn
+                        color="primary"
+                        @click="clickMethod()"
+                        class="self-end"
+                >
+                    Add a record
+                </q-btn>
+                 <q-img
+                        src="/220px-Merope.jpg"
+                        style="width: 100px; border-radius: 50%; margin: 15px auto"
+                />
+         </div>
+
+                <q-list bordered separator padding>
+                    <q-item-label header>List of stars</q-item-label>
+                    <q-item v-for="item in starRecords" :key="item._id">
+                        <q-item>
+                            {{ item.name }}
+                        </q-item>
                     </q-item>
-                </q-item>
-            </q-list>
-        </div>
-    </div>
+                </q-list>
+
+
+     </div>
 </template>
 
 <script>
@@ -28,7 +37,8 @@
         QBtn,
         QItem,
         QItemMain,
-        QItemLabel
+        QItemLabel,
+        QImg
     } from 'quasar';
 
 
@@ -45,7 +55,8 @@
             QBtn,
             QItem,
             QItemMain,
-            QItemLabel
+            QItemLabel,
+            QImg
         },
         meteor: {
             starRecords: {

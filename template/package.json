@@ -10,7 +10,7 @@
     "fastclick": "^1.0.6",
     "meteor-node-stubs": "^1.0.0",
     "moment": "^2.24.0",
-    "quasar": "^1.5.9",
+    "quasar": "^1.6.1",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.10",
     "vue-meteor-tracker": "^1.0.3",
