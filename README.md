@@ -3,7 +3,7 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 10th January 2020).
+(Updated 15th January 2020).
 
 #### Quasar 1.6.1
 
