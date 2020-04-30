@@ -5,21 +5,21 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "@babel/runtime": "^7.8.4",
-    "@quasar/extras": "^1.5.1",
+    "@babel/runtime": "^7.9.6",
+    "@quasar/extras": "^1.7.0",
     "fastclick": "^1.0.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "meteor-node-stubs": "^1.0.0",
     "moment": "^2.24.0",
-    "quasar": "^1.9.1",
+    "quasar": "^1.9.16",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.11",
     "vue-meteor-tracker": "^1.0.3",
-    "vue-router": "^3.1.5"
+    "vue-router": "^3.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "babel-core": "^7.0.0-bridge.0"
   },
   "jshintConfig": {

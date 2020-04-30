@@ -5,9 +5,9 @@
 # but you can also edit it by hand.
 
 meteor-base@1.4.0             # Packages every Meteor app needs to have
-mongo@1.8.0                   # The database Meteor supports right now
+mongo@1.10.0                   # The database Meteor supports right now
 reactive-var@1.0.11            # Reactive variable for tracker
-jquery@1.11.10                  # Helpful client-side library
+jquery@3.0.0                  # Helpful client-side library
 tracker@1.2.0                 # Meteor's client-side reactive programming library
 
 standard-minifier-css@1.6.0   # CSS minifier run for production mode
@@ -15,13 +15,13 @@ standard-minifier-js@2.6.0    # JS minifier run for production mode
 es5-shim@4.8.0                # ECMAScript 5 compatibility for older browsers.
 
 session@1.2.0
-shell-server@0.4.0
+shell-server@0.5.0
 static-html
-mobile-experience@1.0.5
-dynamic-import@0.5.1
+mobile-experience@1.1.0
+dynamic-import@0.5.2
 ongoworks:security
 insecure@1.0.7
-ecmascript@0.14.0
+ecmascript@0.14.3
 akryum:vue-component
-modern-browsers@0.1.4
+modern-browsers@0.1.5
 akryum:vue
