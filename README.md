@@ -3,11 +3,11 @@
 # quasar-template-meteor
 Quasar Starter Kit for Meteor
 
-(Updated 30th April 2020).
+(Updated 2nd June 2021).
 
-#### Quasar 1.9.6
+#### Quasar 1.15.16
 
-#### Meteor 1.10.2
+#### Meteor 2.2
 
 This is a resource which will show how to install Quasar inside the Meteor framework, with Vue2 also installed.
 
