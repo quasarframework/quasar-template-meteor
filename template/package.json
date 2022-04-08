@@ -10,7 +10,7 @@
     "fastclick": "^1.0.6",
     "jquery": "^3.6.0",
     "meteor-node-stubs": "^1.0.3",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "quasar": "^1.15.16",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.12",
