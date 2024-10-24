@@ -13,7 +13,7 @@
     "moment": "^2.29.4",
     "quasar": "^1.15.16",
     "velocity-animate": "^1.5.2",
-    "vue": "^2.6.12",
+    "vue": "^3.0.0",
     "vue-meteor-tracker": "^1.0.3",
     "vue-router": "^3.5.1"
   },
